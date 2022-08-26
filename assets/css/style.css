@@ -51,10 +51,10 @@ a, a:hover, a:focus {
 }
 
 button, button:hover, button:focus {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    outline: none;
-    text-decoration: none;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    text-decoration: none !important;
     cursor: pointer;
     -o-transition: var(--transition-default);
     transition: var(--transition-default);
@@ -84,8 +84,19 @@ textarea:focus {
     -webkit-transition: var(--transition-default);
 }
 
+p {
+    margin-bottom: 10px;
+}
+
 .section-gap {
     margin: 20px 0;
+}
+
+.title {
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--gray-900);
 }
 
 /****
@@ -102,8 +113,21 @@ textarea:focus {
     padding: 10px;
 }
 
-.form-m1 .form-group {
-    margin-bottom: 0;
+.form-m1 .form-control {
+    height: 30px;
+    border-radius: 4px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.form-m1 .btn {
+    white-space: nowrap;
+    border-radius: 4px;
+}
+
+.form-m1 .btn.btn-small {
+    height: 30px;
+    line-height: 18px;
 }
 
 @media screen and (max-width: 575px) {
