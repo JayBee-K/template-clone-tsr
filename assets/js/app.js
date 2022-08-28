@@ -1,5 +1,7 @@
 ;(function ($) {
     'use strict';
+    let windowWidth = $(window).width();
+
 
     let initFromModule1 = function () {
         let elmWrapper = $('#from-m1');
@@ -42,6 +44,7 @@
             $(this).closest('.row-item').remove();
         });
     }
+
     let initCardCloneTab = function () {
         $('.card-cloneTab[data-toggle=tab]').on('shown.bs.tab', function () {
             $('.card-cloneTab[data-toggle=tab]').removeClass('active');
@@ -50,8 +53,52 @@
         });
     }
 
+    /***
+     * Xử lý độ rộng menu
+     * Add thêm class vào để sắp xếp lại header
+     */
+    let initReOrderHeader = function () {
+        if (windowWidth > 991) {
+            let elmHeader = $('#header-m1'),
+                widthContainer = parseInt(elmHeader.children('.container').width()),
+                widthNavigation = parseInt(elmHeader.children('.container').children('.header-navigation').width()),
+                widthLogo = parseInt(elmHeader.children('.container').children('.header-logo').width()),
+                widthUser = parseInt(elmHeader.children('.container').children('.header-user').width()),
+                widthRatio = (widthNavigation - widthLogo - widthUser) / widthContainer;
+            if (widthRatio > 0.5) {
+                elmHeader.addClass('header-sort');
+            }
+        }
+    }
+
+    let initHeaderMobile = function () {
+        $('#call-navigation').click(function () {
+            $('#header-m1').toggleClass('is-navigation');
+        });
+
+        $('#header-m1 .header-navigation .hasSub > .sub-icon').click(function () {
+            if ($(this).closest('.hasSub').hasClass('is-show')) {
+                $(this).text('+');
+                $(this).closest('.hasSub').removeClass('is-show')
+            } else {
+                $('#header-m1 .header-navigation .hasSub').removeClass('is-show');
+                $('#header-m1 .header-navigation .hasSub > .sub-icon').text('+');
+                $(this).text('-');
+                $(this).closest('.hasSub').addClass('is-show')
+            }
+        });
+        $('#call-userMB').click(function () {
+            $('#header-m1').toggleClass('is-usermb')
+        });
+        $('#header-overlay').click(function () {
+            $('#header-m1').removeClass('is-navigation is-usermb');
+        })
+    }
+
     $(function () {
         initFromModule1();
         initCardCloneTab();
+        initReOrderHeader();
+        initHeaderMobile();
     });
 })(jQuery);
