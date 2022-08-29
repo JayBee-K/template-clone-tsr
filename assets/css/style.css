@@ -177,7 +177,7 @@ a:active {
 }
 
 .title {
-    font-size: 28px;
+    font-size: 25px;
     margin-bottom: 5px;
     font-weight: 700;
     color: var(--gray-900);
@@ -1453,7 +1453,7 @@ a:active {
 
 .page-article_detail .article-inner_title h1 {
     margin-bottom: 15px;
-    font-size: 28px;
+    font-size: 25px;
     color: var(--gray-900);
     font-weight: 700;
     line-height: 40px;
@@ -1605,4 +1605,42 @@ a:active {
         top: unset;
         margin-top: 30px;
     }
+}
+
+
+.card-price {
+    border-radius: 10px;
+    border: 1px solid var(--gray-200);
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    padding: 20px;
+    position: relative;
+    font-size: 15px;
+    font-weight: 700;
+    background: #e7e6e6;
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+    cursor: pointer;
+}
+
+.card-price svg {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    transition: all linear .3s;
+    opacity: 0;
+}
+
+.card-price.active {
+    color: var(--white);
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.card-price.active svg {
+    opacity: 1;
 }
