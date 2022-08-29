@@ -472,6 +472,12 @@ a:active {
     content: "";
 }
 
+@media screen and (min-width: 1460px) {
+    .card-product .card-image:before {
+        padding-top: 100px;
+    }
+}
+
 .card-product .card-image > img {
     position: absolute;
     top: 0;
