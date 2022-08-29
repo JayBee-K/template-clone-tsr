@@ -180,6 +180,16 @@ a:active {
     color: var(--gray-800);
 }
 
+@media screen and (max-width: 991px) {
+    .title {
+        font-size: 24px;
+    }
+
+    .sub-title {
+        font-size: 17px;
+    }
+}
+
 .switch-module {
     padding-left: 3.75rem;
 }
@@ -254,15 +264,13 @@ a:active {
     color: var(--gray-400);
 }
 
-@media screen and (max-width: 575px) {
-    .form-m1 .custom-row {
-        margin-top: 0;
-        margin-left: -5px;
-        margin-right: -5px;
+@media screen and (max-width: 767px) {
+    .form-m1 .row {
+        margin: 0 0 15px;
     }
 
-    .form-m1 .custom-row > [class*=col] {
-        padding: 0 5px;
+    .form-m1 .row > [class*=col] {
+        padding: 0;
     }
 }
 
@@ -299,6 +307,7 @@ a:active {
 .table-module td, .table-module th {
     padding: .5rem;
     font-size: 13.5px;
+    vertical-align: middle;
 }
 
 .table-module tr:nth-child(even) {
@@ -448,6 +457,25 @@ a:active {
 .tabs-m2 .tab-content {
     background-color: var(--white);
     border-radius: 0 3px 3px 3px;
+}
+
+@media screen and (max-width: 991px) {
+    .tabs-m2 .nav-tabs {
+        justify-content: flex-start;
+    }
+
+    .tabs-m2 .nav-tabs .nav-item .nav-link {
+        display: inline-flex;
+        width: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .tabs-m2 .nav-tabs .nav-item {
+        margin-right: 8px;
+        margin-bottom: 6px;
+        margin-left: 0 !important;
+    }
 }
 
 .card-product {

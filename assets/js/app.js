@@ -4,8 +4,8 @@
 
 
     let initFromModule1 = function () {
-        let elmWrapper = $('#from-m1');
-        $('#from-m1').on('click', '.addRow', function () {
+        let elmWrapper = $('#createRow');
+        $('#createRow').on('click', '.addRow', function () {
             let theCaoSelect = $(this).closest('.row-item').find('#theCao'),
                 theCaoIndexSelected = theCaoSelect.find('option:selected').attr('data-index'),
                 theCaoRender = $(this).closest('.row-item').find('#theCao').clone();
