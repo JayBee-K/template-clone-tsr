@@ -100,6 +100,12 @@ a:active {
     font-size: 12px;
 }
 
+@media screen and (min-width: 576px) and (max-width: 991px) {
+    .container {
+        max-width: 95%;
+    }
+}
+
 .row5 {
     margin-top: -5px;
     margin-left: -5px;
@@ -652,10 +658,10 @@ a:active {
 .article-item .article-item_body > a {
     font-size: 14px;
     color: var(--primary-color);
-    line-height: 1.5;
+    line-height: 1.3;
     overflow: hidden;
     text-overflow: ellipsis;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 5;
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
@@ -1914,4 +1920,52 @@ a:active {
     .partner-wrapper .partner-item {
         width: 50%;
     }
+}
+
+.card-topup {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    transition: var(--transition-default);
+}
+
+.card-topup .card-image {
+    border-radius: 12px;
+    box-shadow: rgb(0 0 0 / 10%) 0 0 0.5em, rgb(0 0 0 / 5%) 0 0 0 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    height: 138px;
+    transition: var(--transition-default);
+}
+
+.card-topup .card-image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.card-topup .card-title {
+    text-align: center;
+    font-size: 14px;
+    color: var(--shadow-primary);
+    padding-top: 5px;
+    margin-bottom: 0;
+}
+
+.card-topup:hover {
+    transform: translateY(-5px);
+}
+
+.card-topup:hover .card-image {
+    box-shadow: rgb(0 0 0 / 35%) 0 0 0.5em, rgb(0 0 0 / 25%) 0 0 0 1px;
+}
+
+.card-topup:hover .card-title {
+    color: var(--primary-hover);
 }
