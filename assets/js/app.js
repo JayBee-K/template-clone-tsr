@@ -96,13 +96,15 @@
 	}
 
 	let initHeaderScroll = function () {
-		$(window).scroll(function () {
-			if ($(document).scrollTop() > 0) {
-				$('#header-m1').addClass('is-scroll');
-			} else {
-				$('#header-m1').removeClass('is-scroll');
-			}
-		});
+		if ($('body').height() / $(window).height() > 1.2) {
+			$(window).scroll(function () {
+				if ($(document).scrollTop() > 0) {
+					$('#header-m1').addClass('is-scroll');
+				} else {
+					$('#header-m1').removeClass('is-scroll');
+				}
+			});
+		}
 	}
 
 	$(function () {
