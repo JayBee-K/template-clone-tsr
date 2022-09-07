@@ -267,342 +267,193 @@
                     <a href="#">Trang chủ</a>
                 </li>
                 <li class="breadcrumb-item">
-                    <a href="#">Nạp topup</a>
+                    <a href="#">Nạp tiền</a>
                 </li>
             </ol>
         </div>
     </div>
     <div class="section-gap">
         <div class="container">
-            <div class="information-inner">
-                <div class="card rounded-sm bg-white">
-                    <div class="card-header bg-transparent rounded-0 border-0">
-                        <div class="heading-m1">
+            <div class="alert-custom alert alert-danger">
+                <b>Lưu ý:</b> nạp quỹ bằng tài khoản ngân hàng của bạn. Nếu lợi dụng ATM của website để nhận tiền người
+                khác, rửa tiền, lừa đảo sẽ khóa vĩnh viễn! Thời gian đợi thanh toán đối đa 15 phút. Hệ thống tự động
+                cộng tiền 24/24. Vui lòng ghi đúng nội dung chuyển khoản.
+            </div>
+            <div class="section-gap">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="description mb-3">
                             <div class="title">
-                                Thông tin tài khoản
+                                CÁCH 1: NẠP QUỸ THEO SỐ ĐIỆN THOẠI & QR
+                            </div>
+                            <div class="desc">
+                                <div class="my-4">
+                                    <p class="text-center h6">Ngân hàng ACB</p>
+                                    <p class="text-center">Số tài khoản: <b>23</b>
+                                        <button type="button" class="btn btn-light btn-sm copy-value btn-vertical-top ml-1"
+                                                data-value="23">
+                                            <i class="fas fa-paste"></i>
+                                        </button>
+                                    </p>
+                                    <p class="text-center">Chủ tài khoản: <b>NG</b>
+                                        <button type="button" class="btn btn-light btn-sm copy-value btn-vertical-top ml-1"
+                                                data-value="NG">
+                                            <i class="fas fa-paste"></i>
+                                        </button>
+                                    </p>
+                                    <p class="text-center">
+                                        Nội dung chuyển tiền:
+                                        <b class="font-weight-bold text-danger h6">tratien 0943793989</b>
+                                        <button type="button" class="btn btn-light btn-sm copy-value btn-vertical-top ml-1"
+                                                data-value="tratien 0943793989">
+                                            <i class="fas fa-paste"></i>
+                                        </button>
+                                    </p>
+                                </div>
+                                <p class="text-muted">Bạn hãy chuyển tiền với nội dung bên trên vào một trong các số
+                                    tài
+                                    khoản dưới đây.
+                                    Lưu ý số tiền chuyển không được lớn hơn hạn mức cho phép. Giao dịch sẽ được hoàn
+                                    thành trong vòng 1-2 phút.</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="information-view" id="informationView">
-                            <div class="information-list">
-                                <div class="row no-gutters pb-3 mb-3">
-                                    <div class="col-5 col-md-4">
-                                        Tên đăng nhập
-                                    </div>
-                                    <div class="col-7 text-right text-md-left col-md-8">
-                                        <b>abcxyz@gmail.com</b>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters pb-3 mb-3">
-                                    <div class="col-5 col-md-4">
-                                        Họ và tên:
-                                    </div>
-                                    <div class="col-7 text-right text-md-left col-md-8">
-                                        <b>Hoàng Tấn</b>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters pb-3 mb-3">
-                                    <div class="col-5 col-md-4">
-                                        Email
-                                    </div>
-                                    <div class="col-7 text-right text-md-left col-md-8">
-                                        <b>abcxyz@gmail.com</b>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters pb-3 mb-3">
-                                    <div class="col-5 col-md-4">
-                                        Nhóm
-                                    </div>
-                                    <div class="col-7 text-right text-md-left col-md-8">
-                                        <b>Thành viên</b>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters pb-3 mb-3">
-                                    <div class="col-5 col-md-4">
-                                        Xác thực điện thoại:
-                                    </div>
-                                    <div class="col-7 text-right text-md-left col-md-8">
-                                        <label for="" class="badge badge-danger badge-module mb-0">
-                                            Chưa xác thực
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters pb-3 mb-3">
-                                    <div class="col-5 col-md-4">
-                                        Xác thực Email:
-                                    </div>
-                                    <div class="col-7 text-right text-md-left col-md-8">
-                                        <label for="" class="badge badge-success badge-module mb-0">
-                                            Đã xác thực
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters pb-3 mb-3">
-                                    <div class="col-5 col-md-4">
-                                        Xác thực giấy tờ:
-                                    </div>
-                                    <div class="col-7 text-right text-md-left col-md-8">
-                                        <label for="" class="badge badge-warning badge-module mb-0">
-                                            Đang xác thực
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters pb-3 mb-3">
-                                    <div class="col-5 col-md-4">
-                                        Ngày đăng ký:
-                                    </div>
-                                    <div class="col-7 text-right text-md-left col-md-8">
-                                        <b>2021-04-14 17:05:11</b>
-                                    </div>
-                                </div>
-                                <div class="row no-gutters pb-3 mb-3">
-                                    <div class="col-5 col-md-4">
-                                        Ví điện tử:
-                                    </div>
-                                    <div class="col-7 text-right text-md-left col-md-8">
-                                        <b>0032164008</b>
-                                        - Số tiền: <b class="text-success">0 <sup>đ</sup></b>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mt-5 pt-4 border-top text-center text-md-left">
-                                <button class="btn btn-success btn-default updateInformation"
-                                        data-form="0">
-                                    Sửa thông
-                                    tin
-                                </button>
-                                <button class="btn btn-secondary btn-default updateInformation"
-                                        data-form="1">Đổi mật
-                                    khẩu
-                                </button>
+                        <div class="description mb-3">
+                            <div class="title">
+                                CÁCH 2: TẠO YÊU CẦU NẠP QUỸ
                             </div>
                         </div>
-                        <div class="information-form form-m1" style="display: none" id="informationFrom">
+                        <div class="form-m1">
                             <form action="">
                                 <div class="row row10">
-                                    <div class="col-md-4">
-                                        <label for="user" class="mb-3 mb-md-0 font-weight-bold">
-                                            Tên đăng nhập
+                                    <div class="col-12">
+                                        <label for="" class="col-form-label">
+                                            Số dư quỹ: <b class="font-weight-bold text-success">99,000 VND</b>
                                         </label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="form-group mb-0">
-                                            <input type="text" readonly class="form-control" id="user"
-                                                   placeholder="abcxyz@gmail.com">
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="row row10">
-                                    <div class="col-md-4">
-                                        <label for="fullname" class="mb-3 mb-md-0 font-weight-bold">
-                                            Họ & tên
+                                    <div class="col-5 col-sm-4">
+                                        <label for="" class="col-form-label font-weight-bold">
+                                            Số tiền nạp:
                                         </label>
                                     </div>
-                                    <div class="col-md-8">
-                                        <div class="form-group mb-0">
-                                            <input type="text" class="form-control" id="fullname"
-                                                   placeholder="Hoàng Tấn">
-                                        </div>
+                                    <div class="col-7 col-sm-8">
+                                        <input type="text" class="form-control" placeholder="Số tiền cần nạp">
+                                        <span class="text-danger text-small">Tối thiểu 30,000 VND , Tối đa 500,000
+                                            VND</span>
                                     </div>
                                 </div>
                                 <div class="row row10">
-                                    <div class="col-md-4">
-                                        <label for="email" class="mb-3 mb-md-0 font-weight-bold">
-                                            Email đăng nhập
+                                    <div class="col-5 col-sm-4">
+                                        <label for="" class="col-form-label font-weight-bold">
+                                            Cổng thanh toán
                                         </label>
                                     </div>
-                                    <div class="col-md-8">
-                                        <div class="form-group mb-0">
-                                            <input type="email" readonly class="form-control" id="email"
-                                                   placeholder="abcxyz@gmail.com">
-                                        </div>
+                                    <div class="col-7 col-sm-8">
+                                        <select name="" class="form-control" id="">
+                                            <option value="">Ví điện tử Momo</option>
+                                            <option value="">ATM Việt Nam (Internet Banking)</option>
+                                            <option value="">Perfect Money</option>
+                                            <option value="">Webmoney Transfer</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row row10">
-                                    <div class="col-md-4">
-                                        <label for="phone" class="mb-3 mb-md-0 font-weight-bold">
-                                            Số điện thoại
-                                        </label>
+                                    <div class="col-sm-8 offset-sm-4 text-center text-center">
+                                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            Nạp tiền ngay
+                                        </button>
                                     </div>
-                                    <div class="col-md-8">
-                                        <div class="form-group mb-0">
-                                            <input type="tel" class="form-control" id="phone"
-                                                   placeholder="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row row10">
-                                    <div class="col-md-4">
-                                        <label for="language" class="mb-3 mb-md-0 font-weight-bold">
-                                            Ngôn ngữ
-                                        </label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="form-group mb-0">
-                                            <select name="" class="form-control" id="language">
-                                                <option value="">--- Chọn ngôn ngữ ---</option>
-                                                <option value="">Tiếng việt</option>
-                                                <option value="">Tiếng Anh</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row row10">
-                                    <div class="col-md-4">
-                                        <label for="country" class="mb-3 mb-md-0 font-weight-bold">
-                                            Quốc gia
-                                        </label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="form-group mb-0">
-                                            <select name="" class="form-control" id="country">
-                                                <option value="" selected>Việt Nam</option>
-                                                <option value="">Nhật Bản</option>
-                                                <option value="">Trung Quốc</option>
-                                                <option value="">Nhật Bản</option>
-                                                <option value="">Trung Quốc</option>
-                                                <option value="">Nhật Bản</option>
-                                                <option value="">Trung Quốc</option>
-                                                <option value="">Nhật Bản</option>
-                                                <option value="">Trung Quốc</option>
-                                                <option value="">Nhật Bản</option>
-                                                <option value="">Trung Quốc</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row row10">
-                                    <div class="col-md-4">
-                                        <label for="password02" class="mb-3 mb-md-0 font-weight-bold">
-                                            Mạt khẩu cấp 2
-                                        </label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="form-group mb-0">
-                                            <input type="password" class="form-control" id="password02"
-                                                   placeholder="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-5 pt-4 border-top text-center text-md-left">
-                                    <button class="btn btn-success btn-default">Cập nhật thông tin
-                                    </button>
-                                    <button type="reset" class="btn btn-secondary btn-default">Nhập
-                                        lại
-                                    </button>
-                                    <button type="button"
-                                            class="float-md-right text-muted btn btn-link btn-small updateInformation"
-                                            data-form="2">Quay lại
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="information-form form-m1" style="display: none" id="passwordFrom">
-                            <form action="">
-                                <div class="row row10">
-                                    <div class="col-md-4">
-                                        <label for="passwordold" class="mb-3 mb-md-0 font-weight-bold">
-                                            Mạt khẩu cũ
-                                        </label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="form-group mb-0">
-                                            <input type="password" class="form-control" id="passwordold"
-                                                   placeholder="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row row10">
-                                    <div class="col-md-4">
-                                        <label for="passwordnew" class="mb-3 mb-md-0 font-weight-bold">
-                                            Mật khẩu mới
-                                        </label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="form-group mb-0">
-                                            <input type="password" class="form-control" id="passwordnew"
-                                                   placeholder="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row row10">
-                                    <div class="col-md-4">
-                                        <label for="confirmpasswordnew" class="mb-3 mb-md-0 font-weight-bold">
-                                            Nhập lại mật khẩu mới
-                                        </label>
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="form-group mb-0">
-                                            <input type="password" class="form-control" id="confirmpasswordnew"
-                                                   placeholder="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mt-5 pt-4 border-top text-center text-md-left">
-                                    <button class="btn btn-success btn-sm template-1-btn">Cập nhật mật khẩu
-                                    </button>
-                                    <button type="reset" class="btn btn-secondary btn-sm template-1-btn">Nhập
-                                        lại
-                                    </button>
-                                    <button type="button"
-                                            class="float-md-right text-muted btn btn-link outline btn-sm updateInformation"
-                                            data-form="2">Quay lại
-                                    </button>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <div class="loading-pure" style="display: none">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                    <div class="col-md-6 mt-4 mt-lg-0">
+                        <div class="description mb-1">
+                            <div class="small-title">
+                                HẠN MỨC VÀ PHÍ:
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-module">
+                                <tr>
+                                    <td>Tổng hạn mức ngày</td>
+                                    <th>500,000VNĐ</th>
+                                </tr>
+                                <tr>
+                                    <td>Số tiền tối thiểu</td>
+                                    <th>30,000VNĐ</th>
+                                </tr>
+                                <tr>
+                                    <td>Số tiền tối đa</td>
+                                    <th>500,000VNĐ</th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="mt-4">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-module">
+                                    <tr>
+                                        <th>Cổng thanh toán</th>
+                                        <th class="text-center">Phí cố định</th>
+                                        <th class="text-center">Phí %</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Ví điện tử Momo</td>
+                                        <td class="text-center">0 VND</td>
+                                        <td class="text-center">1%</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="mt-4">
                 <div class="description mb-3">
                     <div class="sub-title">
-                        Lịch sử đăng nhập
+                        Lịch sử nạp tiền
                     </div>
                 </div>
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-module">
                         <thead>
                         <tr>
-                            <th>IP</th>
+                            <th>Đơn hàng</th>
+                            <th class="text-center">Nạp vào quỹ</th>
+                            <th class="text-center">Số tiền nạp</th>
+                            <th>Cổng thanh toán</th>
                             <th>Ngày tạo</th>
-                            <th>Trình duyệt</th>
+                            <th class="text-center">Trạng thái</th>
+                            <th class="text-center">Hành động</th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td><b>14.161.190.91</b></td>
-                            <td>2022-09-07 19:43:43</td>
-                            <td>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
-                                Chrome/104.0.0.0 Safari/537.36
+                            <td>#order01</td>
+                            <td class="text-center">Quỹ tài khoản</td>
+                            <td class="text-center">102,000đ</td>
+                            <td>Ví điện tử Momo</td>
+                            <td>30-08-2022</td>
+                            <td class="text-center"><span class="badge badge-module badge-success">Thành công</span>
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-sm_table btn-info">Thay đổi</button>
+                                <button type="button" class="btn btn-sm_table btn-danger">Xoá</button>
                             </td>
                         </tr>
                         <tr>
-                            <td><b>14.161.190.91</b></td>
-                            <td>2022-09-07 19:43:43</td>
-                            <td>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
-                                Chrome/104.0.0.0 Safari/537.36
+                            <td>#order01</td>
+                            <td class="text-center">Quỹ tài khoản</td>
+                            <td class="text-center">102,000đ</td>
+                            <td>Ví điện tử Momo</td>
+                            <td>30-08-2022</td>
+                            <td class="text-center"><span class="badge badge-module badge-success">Thành công</span>
                             </td>
-                        </tr>
-                        <tr>
-                            <td><b>14.161.190.91</b></td>
-                            <td>2022-09-07 19:43:43</td>
-                            <td>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
-                                Chrome/104.0.0.0 Safari/537.36
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><b>14.161.190.91</b></td>
-                            <td>2022-09-07 19:43:43</td>
-                            <td>Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)
-                                Chrome/104.0.0.0 Safari/537.36
+                            <td class="text-center">
+                                <button type="button" class="btn btn-sm_table btn-info">Thay đổi</button>
+                                <button type="button" class="btn btn-sm_table btn-danger">Xoá</button>
                             </td>
                         </tr>
                         </tbody>
@@ -723,10 +574,8 @@
                                 <span>Tiếng Việt</span>
                             </button>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownLanguage">
-                                <a class="dropdown-item " href="">English
-                                </a>
-                                <a class="dropdown-item active " href="">
-                                    Tiếng
+                                <a class="dropdown-item " href="">English</a>
+                                <a class="dropdown-item active " href="">Tiếng
                                     Việt
                                 </a>
                             </div>
