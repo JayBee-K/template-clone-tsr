@@ -311,7 +311,7 @@ h6, .h6 {
 }
 
 .sub-title {
-	font-size: 20px;
+	font-size: 18px;
 	margin-bottom: 5px;
 	font-weight: 700;
 	color: var(--gray-800);
@@ -324,9 +324,17 @@ h6, .h6 {
 	}
 
 	.sub-title {
-		font-size: 18px;
+		font-size: 16px;
 		line-height: 1.2;
 	}
+}
+
+.link-default {
+	color: #33314e !important;
+}
+
+.link-default {
+	color: #64608e !important;
 }
 
 /***** End Custom Title *****/
@@ -795,10 +803,13 @@ h6, .h6 {
 	transition: var(--transition-default);
 }
 
+.card-product .card-image svg path {
+	fill: red;
+}
+
 .card-product .card-title {
 	text-align: center;
 	font-size: 14px;
-	color: var(--shadow-primary);
 	padding-top: 5px;
 	margin-bottom: 0;
 }
@@ -1172,6 +1183,12 @@ h6, .h6 {
 	font-size: 13.5px;
 	background-color: var(--primary-color);
 	border-radius: 3px;
+}
+
+.header-m1 .header-user .header-login > ul > li > a > i {
+	font-size: 12px;
+	position: relative;
+	top: -1px;
 }
 
 .header-m1 .header-user .header-login > ul > li > ul {
@@ -2277,3 +2294,49 @@ h6, .h6 {
 }
 
 /***** End Custom Alert *****/
+
+/***** Custom Heading *****/
+.heading-m1 {
+	margin-bottom: 10px;
+}
+
+.heading-m1 .title {
+	position: relative;
+	font-size: 22px;
+	font-weight: 700;
+	color: var(--gray-900);
+	text-transform: uppercase;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.heading-m1 .title::before {
+	position: absolute;
+	display: block;
+	content: "";
+	bottom: 0;
+	height: 6px;
+	width: 80px;
+	background-color: #c3c3c3;
+	border-radius: 20px;
+}
+
+.heading-m1 .title::after {
+	position: absolute;
+	display: block;
+	content: "";
+	bottom: 0;
+	height: 6px;
+	width: 30px;
+	background-color: var(--primary-color);
+	border-radius: 20px;
+}
+
+@media screen and (max-width: 991px) {
+	.heading-m1 .title {
+		font-size: 20px;
+		line-height: 1.2;
+	}
+}
+
+/***** End Custom Heading *****/
