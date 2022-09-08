@@ -286,31 +286,23 @@
 				</ul>
 				<div class="search-inner form-m1">
 					<form action="">
-						<div class="mb-lg-3">
-							<div class="form-check_inner">
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" id="choose-flight-01"
-										   checked
-										   name="choose-flight_chuyenbay" role="button">
-									<label class="form-check-label" role="button" for="choose-flight-01">Một
-										chiều</label>
-								</div>
-								<div class="form-check form-check-inline">
-									<input class="form-check-input" type="radio" id="choose-flight-02"
-										   name="choose-flight_chuyenbay" role="button">
-									<label class=" form-check-label" role="button" for="choose-flight-02">Khứ
-										hồi</label>
-								</div>
+						<div class="form-check_inner">
+							<div class="form-check form-check-inline">
+								<input class="form-check-input" type="radio" id="choose-flight-01"
+									   checked
+									   name="choose-flight_chuyenbay" role="button">
+								<label class="form-check-label" role="button" for="choose-flight-01">Một
+									chiều</label>
 							</div>
 						</div>
-						<div class="row row10 align-items-end">
+						<div class="row rowmb5 align-items-end">
 							<div class="col-lg-5">
-								<div class="row row10">
+								<div class="row rowmb5">
 									<div class="col-lg-6">
-										<div class="inner trigger-select position-relative">
-											<label for="flightDeparture" class="col-form-label">Nơi
+										<div class="inner trigger-select position-relative row align-items-center no-gutters rowmb5">
+											<label class="col-form-label col-lg-12 col-5 col-sm-4">Nơi
 												đi</label>
-											<div class="position-relative form-icon form-icon_left">
+											<div class="position-relative form-icon form-icon_left col-lg-12 col-7 col-sm-8">
 												<div class="form-button">
 													<i class="fas fa-plane-departure"></i>
 												</div>
@@ -370,10 +362,12 @@
 										</div>
 									</div>
 									<div class="col-lg-6">
-										<div class="inner trigger-select inner-last position-relative">
-											<label>Nơi đến</label>
-											<div class="d-flex align-items-center box-inner">
-												<i class="fas fa-plane-arrival"></i>
+										<div class="inner trigger-select inner-last position-relative row align-items-center no-gutters rowmb5">
+											<label class="col-form-label col-lg-12 col-5 col-sm-4">Nơi đến</label>
+											<div class="position-relative form-icon form-icon_left col-lg-12 col-7 col-sm-8">
+												<div class="form-button">
+													<i class="fas fa-plane-arrival"></i>
+												</div>
 												<select name="states[]" id="flightDestination"
 														data-key="1"
 														class="flight-select form-control">
@@ -433,25 +427,27 @@
 								</div>
 							</div>
 							<div class="col-lg-5">
-								<div class="row row10">
-									<div class="col col-custom" id="col-mark_chuyenbay">
-										<div class="inner position-relative trigger-flat_chuyenbay"
+								<div class="row rowmb5">
+									<div class="col-lg col-12" id="col-mark_chuyenbay">
+										<div class="inner position-relative trigger-flat_chuyenbay row align-items-center no-gutters rowmb5"
 											 data-calendar="1">
-											<label for="">Ngày
+											<label for="" class="col-form-label col-lg-12 col-5 col-sm-4">Ngày
 												khởi hành</label>
-											<div class="d-flex align-items-center box-inner">
-												<i class="fas fa-calendar-alt"></i>
+											<div class="position-relative form-icon form-icon_left col-lg-12 col-7 col-sm-8">
+												<div class="form-button">
+													<i class="fas fa-calendar-alt"></i>
+												</div>
 												<input type="text" placeholder="Chọn ngày khỏi hành"
-													   class="border-0 rounded-0 py-0 bg-transparent form-control
+													   class="form-control
                                                         form-date flatpickr flatpickr-input"
 													   id="date-departure"/>
 											</div>
 										</div>
 									</div>
-									<div class="col col-custom">
-										<div class="inner position-relative passenger-dropdown form-choose-people">
-											<label for="">Hành khách</label>
-											<div class="d-flex align-items-center box-inner">
+									<div class="col-lg col-12">
+										<div class="inner position-relative passenger-dropdown form-choose-people row align-items-center no-gutters rowmb5">
+											<label for="" class="col-form-label col-lg-12 col-5 col-sm-4">Hành khách</label>
+											<div class="d-flex align-items-center box-inner col-lg-12 col-7 col-sm-8">
 												<div class="passenger-inner position-relative w-100">
 													<div class="dropdown overflow-hidden">
 														<span class="dropdown-toggle d-flex align-items-center w-100">
@@ -469,8 +465,8 @@
 												 style="display: none">
 												<div class="passenger-dropdown-container">
 													<div class="border-bottom">
-														<div class="passenger-title bg-light p-3 d-flex align-items-center justify-content-between">
-															<div class="h6 font-weight-bold mb-0">Hành
+														<div class="passenger-title bg-light px-3 py-2 d-flex align-items-center justify-content-between">
+															<div class="font-weight-bold mb-0">Hành
 																khách
 															</div>
 															<div class="passenger-close">
@@ -569,7 +565,7 @@
 							<div class="col-lg-2">
 								<div class="inner position-relative">
 									<button type="submit"
-											class="button-theme button-theme_primary rounded-xl w-100">
+											class="btn btn-default btn-theme_primary w-100 font-weight-bold">
 										<span>
 											Tìm vé<i class="far fa-search ml-2"></i>
 										</span>
@@ -587,6 +583,8 @@
 <script type=" text/javascript" src="./assets/plugins/jquery.min.js"></script>
 <script type="text/javascript"
 		src="./assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript"
+		src="./assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr.js"></script>
 <script type="text/javascript"
 		src="./assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr-vn.js"></script>
 <script type="text/javascript" src="./assets/plugins/select2/js/select2.min.js"></script>
