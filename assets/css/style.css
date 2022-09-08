@@ -2667,37 +2667,23 @@ h6, .h6 {
 	padding: 20px 0;
 }
 
-.section-search .search-tab .nav-tabs .nav-link {
-	background-color: var(--white);
-	color: #1f2937;
-	font-weight: 600;
-	font-size: 15px;
-	padding: 10px 20px;
-	border: 0;
-}
-
-.section-search .search-tab .nav-tabs .nav-link.active {
-	background-color: var(--primary-color);
-	color: var(--white);
-}
-
-.section-search .search-tab .search-inner {
+.section-search .search-inner {
 	padding: 15px;
 	background-color: var(--white);
 	border-radius: 0 0.2em 0.2em;
 	border: 1px solid var(--gray-200);
 }
 
-.section-search .search-tab .search-inner.form-m1 .form-icon .form-button {
+.section-search .search-inner.form-m1 .form-icon .form-button {
 	left: 5px;
 	font-size: 13px;
 }
 
-.section-search .search-tab .search-inner.form-m1 .form-icon .form-button:hover {
+.section-search .search-inner.form-m1 .form-icon .form-button:hover {
 	color: var(--gray-500);
 }
 
-.section-search .search-tab .search-inner .inner .box-inner .passenger-inner .dropdown {
+.section-search .search-inner .inner .box-inner .passenger-inner .dropdown {
 	height: 33px;
 	display: flex;
 	border-radius: 3px;
@@ -2709,7 +2695,7 @@ h6, .h6 {
 	cursor: pointer;
 }
 
-.section-search .search-tab .search-inner .inner .passenger-dropdown-content {
+.section-search .search-inner .inner .passenger-dropdown-content {
 	position: absolute;
 	background: #ffffff;
 	box-shadow: 0 4px 20px 0 rgb(53 64 90 / 20%);
@@ -2721,23 +2707,23 @@ h6, .h6 {
 	display: none;
 }
 
-.section-search .search-tab .search-inner .inner .passenger-dropdown-content .passenger-close {
+.section-search .search-inner .inner .passenger-dropdown-content .passenger-close {
 	cursor: pointer;
 }
 
-.section-search .search-tab .search-inner .inner .passenger-dropdown-content .passenger-dropdown-container .passenger-list-item-title {
+.section-search .search-inner .inner .passenger-dropdown-content .passenger-dropdown-container .passenger-list-item-title {
 	font-size: 14px;
 	font-weight: 700;
 	color: var(--gray-700);
 }
 
-.section-search .search-tab .search-inner .inner .passenger-dropdown-content .passenger-dropdown-container .passenger-list-item-subtitle {
+.section-search .search-inner .inner .passenger-dropdown-content .passenger-dropdown-container .passenger-list-item-subtitle {
 	font-size: 12px;
 	font-weight: 400;
 	color: var(--gray-500);
 }
 
-.section-search .search-tab .search-inner .inner .passenger-dropdown-content .passenger-dropdown-container .passenger-circle {
+.section-search .search-inner .inner .passenger-dropdown-content .passenger-dropdown-container .passenger-circle {
 	height: 22px;
 	width: 22px;
 	border: 1px solid #ced4da;
@@ -2750,25 +2736,25 @@ h6, .h6 {
 	cursor: pointer;
 }
 
-.section-search .search-tab .search-inner .inner .passenger-dropdown-content .passenger-dropdown-container .passenger-circle.disabled {
+.section-search .search-inner .inner .passenger-dropdown-content .passenger-dropdown-container .passenger-circle.disabled {
 	cursor: not-allowed;
 	background-color: #d9d9d9;
 	border-color: #d9d9d9;
 	color: #a9a9a9;
 }
 
-.section-search .search-tab .search-inner .inner .passenger-dropdown-content .passenger-dropdown-container .passenger-counter {
+.section-search .search-inner .inner .passenger-dropdown-content .passenger-dropdown-container .passenger-counter {
 	margin-left: 20px;
 	margin-right: 20px;
 	color: var(--gray-700);
 	font-size: 14px;
 }
 
-.section-search .search-tab .search-inner .inner .passenger-dropdown-content .passenger-dropdown-container .passenger-list-item + .passenger-list-item {
+.section-search .search-inner .inner .passenger-dropdown-content .passenger-dropdown-container .passenger-list-item + .passenger-list-item {
 	border-top: 1px solid #e9e9e9;
 }
 
-.section-search .search-tab .search-inner .inner .btn-default {
+.section-search .search-inner .inner .btn-default {
 	height: 33px;
 	line-height: 1.5;
 }
@@ -2800,17 +2786,17 @@ h6, .h6 {
 }
 
 @media screen and (max-width: 991px) {
-	.section-search .search-tab .search-inner.form-m1 .select2-container {
+	.section-search .search-inner.form-m1 .select2-container {
 		left: 0 !important;
 		right: 0 !important;
 	}
 
-	.section-search .search-tab .search-inner.form-m1 .select2-container--open .select2-dropdown {
+	.section-search .search-inner.form-m1 .select2-container--open .select2-dropdown {
 		left: unset !important;
 		right: 5px !important;
 	}
 
-	.section-search .search-tab .search-inner .inner .passenger-dropdown-content {
+	.section-search .search-inner .inner .passenger-dropdown-content {
 		max-width: 300px;
 		left: unset;
 		right: 0;
