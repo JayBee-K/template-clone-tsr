@@ -210,6 +210,19 @@ h6, .h6 {
 	}
 }
 
+
+@media screen and (min-width: 768px) {
+	.pl-md-8 {
+		padding-left: 30px !important;
+	}
+}
+
+@media screen and (min-width: 991px) {
+	.pl-md-8 {
+		padding-left: 80px !important;
+	}
+}
+
 /***** Custom Button *****/
 .btn {
 	white-space: nowrap;
@@ -3642,6 +3655,12 @@ h6, .h6 {
 	height: auto;
 }
 
+.card-profile .card-body .media .media-body {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
 .card-profile .card-body .media .media-body h5 {
 	font-size: 16px;
 	font-weight: 700;
@@ -3857,6 +3876,7 @@ a.card-service:hover {
 	.section-banner .slide-button-prev {
 		left: 5px;
 	}
+
 	.section-banner .slide-button-next {
 		right: 5px;
 	}
