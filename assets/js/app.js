@@ -118,7 +118,7 @@
 	}
 
 	let initHeaderScroll = function () {
-		if ($('body').height() / $(window).height() > 1.2) {
+		if ($('body').height() / $(window).height() > 1.3) {
 			$(window).scroll(function () {
 				if ($(document).scrollTop() > 0) {
 					$('#header-m1').addClass('is-scroll');
