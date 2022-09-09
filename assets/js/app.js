@@ -165,6 +165,41 @@
 		}, 1000);
 	}
 
+	let initSlideBanner = function () {
+		if ($('#slideBanner').length > 0) {
+			new Swiper('#slideBanner', {
+				loop: false,
+				simulateTouch: false,
+				speed: 250,
+				navigation: {
+					nextEl: '#slideBanner .slide-button-next',
+					prevEl: '#slideBanner .slide-button-prev',
+				},
+				autoplay: {
+					delay: 10000,
+					disableOnInteraction: false,
+				},
+			});
+		}
+
+		if ($('#swiper-banner').length > 0) {
+			new Swiper('#swiper-banner', {
+				loop: false,
+				simulateTouch: false,
+				speed: 250,
+				navigation: {
+					nextEl: '#swiper-banner .swiper-button-next',
+					prevEl: '#swiper-banner .swiper-button-prev',
+				},
+				autoplay: {
+					delay: 10000,
+					disableOnInteraction: false,
+				},
+			});
+		}
+	}
+
+
 	$(function () {
 		initFromModule1();
 		initFormFloating();
@@ -172,6 +207,7 @@
 		initReOrderHeader();
 		initHeaderMobile();
 		initHeaderScroll();
+		initSlideBanner();
 		$(document).on('click', '.copy-value', function () {
 			if ($(this).attr('data-value') != undefined) {
 				initClipboardCopy($(this).attr('data-value'));
@@ -188,7 +224,7 @@
 		 * Scripts Vé
 		 */
 
-		// Địa điểm - Đi & đến
+			// Địa điểm - Đi & đến
 		let dropdownParent = ''
 		$('.flight-select').each(function () {
 			dropdownParent = $(this).parents('.inner');

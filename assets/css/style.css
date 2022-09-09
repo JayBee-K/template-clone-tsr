@@ -2490,7 +2490,7 @@ h6, .h6 {
 
 .heading-m1 .title {
 	position: relative;
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: 700;
 	color: var(--gray-900);
 	text-transform: uppercase;
@@ -2522,7 +2522,7 @@ h6, .h6 {
 
 @media screen and (max-width: 991px) {
 	.heading-m1 .title {
-		font-size: 16px;
+		font-size: 18px;
 		line-height: 1.2;
 	}
 }
@@ -3707,3 +3707,160 @@ a.card-service:hover {
 	opacity: .9;
 	color: #fff;
 }
+
+/***** End Custom Service *****/
+
+/* Custom Banner */
+
+.section-banner .swiper-slide {
+	background: var(--primary-color);
+	padding: 100px 0;
+	min-height: 350px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	background: -webkit-linear-gradient(to right, var(--color-slider));
+	background: linear-gradient(to right, var(--color-slider));
+}
+
+.section-banner .swiper-slide .section-banner_title {
+	font-size: 2.3em;
+	font-weight: 700;
+	color: var(--white);
+	padding: 20px 0 15px;
+	opacity: 1;
+	line-height: 1.1;
+	text-shadow: 0 2px 3px rgb(0 0 0 / 25%);
+}
+
+.section-banner .swiper-slide .section-banner_desc {
+	font-size: 1em;
+	font-weight: 400;
+	color: var(--white);
+	margin-bottom: 0;
+	text-shadow: 0 2px 3px rgb(0 0 0 / 25%);
+	line-height: 1.7;
+}
+
+.section-banner .swiper-slide .section-banner_button {
+	margin-top: 30px;
+}
+
+.section-banner .swiper-slide .section-banner_image img {
+	max-width: 100%;
+	height: auto;
+}
+
+.section-banner .slide-button-prev {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	color: var(--primary-color);
+	background-color: var(--white);
+	border: 1px solid #fff;
+	width: 50px;
+	height: 50px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	z-index: 2;
+	font-size: 2.6em;
+	-webkit-transition: var(--transition-default);
+	-o-transition: var(--transition-default);
+	transition: var(--transition-default);
+	outline: none !important;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.section-banner .slide-button-next {
+	position: absolute;
+	top: 50%;
+	right: 10px;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	color: var(--primary-color);
+	background-color: var(--white);
+	border: 1px solid #fff;
+	width: 50px;
+	height: 50px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	z-index: 2;
+	font-size: 2.6em;
+	-webkit-transition: var(--transition-default);
+	-o-transition: var(--transition-default);
+	transition: var(--transition-default);
+	outline: none !important;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.section-banner .slide-button-next.swiper-button-disabled,
+.section-banner .slide-button-prev.swiper-button-disabled {
+	opacity: 0
+}
+
+.section-banner .slide-button-next:hover,
+.section-banner .slide-button-prev:hover {
+	background: var(--primary-color);
+	color: #fff;
+}
+
+.section-banner .slide-button-prev.swiper-button-block {
+	display: none;
+}
+
+@media screen and (max-width: 991px) {
+	.section-banner .swiper-slide .section-banner_title {
+		font-size: 1.6em;
+		text-align: center;
+	}
+
+	.section-banner .swiper-slide .section-banner_desc,
+	.section-banner .swiper-slide .section-banner_button {
+		text-align: center;
+	}
+
+	.section-banner .slide-button-prev,
+	.section-banner .slide-button-next {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.section-banner .swiper-slide .section-banner_title,
+	.section-banner .swiper-slide .section-banner_desc {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.section-banner .slide-button-prev {
+		left: 5px;
+	}
+	.section-banner .slide-button-next {
+		right: 5px;
+	}
+}
+
+
+/* End Custom Banner */
