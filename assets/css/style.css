@@ -3680,8 +3680,8 @@ h6, .h6 {
 .card-service .card-body .media .avatar {
 	height: 40px;
 	width: 40px;
-	padding: 10px;
-	font-size: 18px;
+	padding: 5px;
+	font-size: 22px;
 	flex-shrink: 0;
 	background-color: rgba(247, 247, 247, .25) !important;
 	display: flex;
