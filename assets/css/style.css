@@ -2490,7 +2490,7 @@ h6, .h6 {
 
 .heading-m1 .title {
 	position: relative;
-	font-size: 22px;
+	font-size: 18px;
 	font-weight: 700;
 	color: var(--gray-900);
 	text-transform: uppercase;
@@ -2503,7 +2503,7 @@ h6, .h6 {
 	display: block;
 	content: "";
 	bottom: 0;
-	height: 6px;
+	height: 3px;
 	width: 80px;
 	background-color: #c3c3c3;
 	border-radius: 20px;
@@ -2514,7 +2514,7 @@ h6, .h6 {
 	display: block;
 	content: "";
 	bottom: 0;
-	height: 6px;
+	height: 3px;
 	width: 30px;
 	background-color: var(--primary-color);
 	border-radius: 20px;
@@ -2522,7 +2522,7 @@ h6, .h6 {
 
 @media screen and (max-width: 991px) {
 	.heading-m1 .title {
-		font-size: 20px;
+		font-size: 16px;
 		line-height: 1.2;
 	}
 }
@@ -2530,8 +2530,9 @@ h6, .h6 {
 /***** End Custom Heading *****/
 
 /***** Custom Profile *****/
-.information-inner .card {
-	padding-top: 14px;
+.information-inner .card .card-header {
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .information-inner .card .card-body {
@@ -2540,7 +2541,7 @@ h6, .h6 {
 
 .information-inner .card .card-body .information-view {
 	position: relative;
-	padding: 0 20px 20px;
+	padding: 0 10px 10px;
 	overflow: hidden;
 }
 
@@ -3607,3 +3608,102 @@ h6, .h6 {
 }
 
 /***** End Custom Search Vé *****/
+
+/***** Custom Card Profile *****/
+.card-profile {
+	border-radius: 3px;
+	transition: var(--transition-default);
+	margin-bottom: 15px;
+}
+
+.card-profile .card-body {
+	padding: 12px 15px;
+}
+
+.card-profile .card-body .media {
+	align-items: center;
+}
+
+.card-profile .card-body .media .avatar {
+	height: 70px;
+	width: 70px;
+	font-size: 18px;
+	flex-shrink: 0;
+	background-color: rgba(247, 247, 247, .25) !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	position: relative;
+}
+
+.card-profile .card-body .media .avatar img {
+	max-width: 100%;
+	height: auto;
+}
+
+.card-profile .card-body .media .media-body h5 {
+	font-size: 16px;
+	font-weight: 700;
+	margin-bottom: 0;
+}
+
+/***** End Custom Profile *****/
+
+/***** Custom Card Service *****/
+
+.card-service {
+	color: var(--white);
+	border: 0;
+	border-radius: 3px;
+	transition: var(--transition-default);
+}
+
+.card-service .card-body {
+	padding: 12px 15px;
+}
+
+.card-service .card-body .media {
+	align-items: center;
+}
+
+.card-service .card-body .media .media-body p {
+	font-size: 15px;
+}
+
+.card-service .card-body .media .media-body h5 {
+	font-size: 16px;
+	font-weight: 700;
+	margin-bottom: 0;
+}
+
+.card-service .card-body .media .avatar {
+	height: 40px;
+	width: 40px;
+	padding: 10px;
+	font-size: 18px;
+	flex-shrink: 0;
+	background-color: rgba(247, 247, 247, .25) !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+}
+
+.card-service .card-body .media .avatar img {
+	max-width: 100%;
+	height: auto;
+}
+
+.card-service + .card-service {
+	margin-top: 15px;
+}
+
+a.card-service {
+	text-decoration: none;
+}
+
+a.card-service:hover {
+	opacity: .9;
+	color: #fff;
+}
