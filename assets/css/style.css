@@ -83,32 +83,7 @@ input[type=time].form-control {
     position: relative;
     padding-right: 0;
     background-color: transparent;
-}
-
-.icon-ios:before {
-    position: absolute;
-    content: "\f133";
-    font-family: "Font Awesome 5 Pro";
-    font-size: 14px;
-    color: var(--gray-700);
-    top: 50%;
-    right: 8px;
-    transform: translateY(-50%);
-    z-index: -1;
-}
-
-input[type=date].form-control:after,
-input[type=datetime-local].form-control:after,
-input[type=month].form-control:after,
-input[type=time].form-control:after {
-    content: attr(placeholder);
-}
-
-input[type=date].form-control:invalid:after,
-input[type=datetime-local].form-control:invalid:after,
-input[type=month].form-control:invalid:after,
-input[type=time].form-control:invalid:after {
-    content: "";
+    color: transparent;
 }
 
 input[type=date]::-webkit-inner-spin-button,
@@ -120,6 +95,40 @@ input[type=month]::-webkit-calendar-picker-indicator,
 input[type=time]::-webkit-inner-spin-button,
 input[type=time]::-webkit-calendar-picker-indicator {
     opacity: 0;
+}
+
+input[type=date].form-control:valid,
+input[type=datetime-local].form-control:valid,
+input[type=month].form-control:valid,
+input[type=time].form-control:valid {
+    color: var(--gray-700);
+}
+
+.icon-ios:before {
+    position: absolute;
+    content: "\f133";
+    font-family: "Font Awesome 5 Pro";
+    font-size: 14px;
+    color: var(--gray-700);
+    top: 50%;
+    right: 0.75rem;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+.icon-ios span {
+    position: absolute;
+    top: 50%;
+    left: 0.825rem;
+    transform: translateY(-50%);
+    color: var(--gray-700);
+}
+
+input[type=date].form-control:valid ~ .icon-ios span,
+input[type=datetime-local].form-control:valid ~ .icon-ios span,
+input[type=month].form-controlnvalid ~ .icon-ios span,
+input[type=time].form-control:valid ~ .icon-ios span {
+    color: transparent;
 }
 
 p,
@@ -501,6 +510,7 @@ h6, .h6 {
 
 .form-m1 .form-control:not(textarea) {
     height: 33px;
+    line-height: 33px;
     padding-top: 0;
     padding-bottom: 0;
 }
