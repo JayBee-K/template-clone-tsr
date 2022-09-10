@@ -83,7 +83,6 @@ input[type=time].form-control {
     position: relative;
     padding-right: 0;
     background-color: transparent;
-    color: transparent;
 }
 
 input[type=date]::-webkit-inner-spin-button,
@@ -97,13 +96,6 @@ input[type=time]::-webkit-calendar-picker-indicator {
     opacity: 0;
 }
 
-input[type=date].form-control:valid,
-input[type=datetime-local].form-control:valid,
-input[type=month].form-control:valid,
-input[type=time].form-control:valid {
-    color: var(--gray-700);
-}
-
 .icon-ios:before {
     position: absolute;
     content: "\f133";
@@ -114,21 +106,6 @@ input[type=time].form-control:valid {
     right: 0.75rem;
     transform: translateY(-50%);
     z-index: -1;
-}
-
-.icon-ios span {
-    position: absolute;
-    top: 50%;
-    left: 0.825rem;
-    transform: translateY(-50%);
-    color: var(--gray-700);
-}
-
-input[type=date].form-control:valid ~ .icon-ios span,
-input[type=datetime-local].form-control:valid ~ .icon-ios span,
-input[type=month].form-controlnvalid ~ .icon-ios span,
-input[type=time].form-control:valid ~ .icon-ios span {
-    color: transparent;
 }
 
 p,
@@ -2172,13 +2149,14 @@ h6, .h6 {
     justify-content: center;
     align-content: center;
     display: flex;
-    padding: 20px;
+    padding: 15px;
     position: relative;
     font-size: 15px;
     font-weight: 700;
     background: #e7e6e6;
     box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
     cursor: pointer;
+    line-height: 1.1;
 }
 
 .card-price svg {
