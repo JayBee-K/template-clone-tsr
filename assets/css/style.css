@@ -214,6 +214,16 @@ h6, .h6 {
 }
 
 @media screen and (max-width: 575px) {
+    .rowmb3 {
+        margin-top: -3px;
+        margin-left: -3px;
+        margin-right: -3px;
+    }
+
+    .rowmb3 > [class*=col] {
+        padding: 3px;
+    }
+
     .rowmb5 {
         margin-top: -5px;
         margin-left: -5px;
@@ -691,6 +701,39 @@ h6, .h6 {
     .form-m1 .row-item + .row-item {
         margin-top: 15px;
     }
+}
+
+.button-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    height: 33px;
+    background: #F3F8FE;
+    border-radius: 3px;
+    border: 1px solid var(--gray-200);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gray-700);
+    padding-left: 10px;
+}
+
+.button-social img,
+.button-social i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    height: 20px;
+    color: var(--primary-color);
+    width: 20px;
+    font-size: 20px;
+}
+
+.button-social i {
+    top: calc(50% + 1px);
 }
 
 /***** End Custom Form *****/
@@ -2149,14 +2192,20 @@ h6, .h6 {
     justify-content: center;
     align-content: center;
     display: flex;
-    padding: 15px;
+    padding: 20px;
     position: relative;
     font-size: 15px;
     font-weight: 700;
     background: #e7e6e6;
     box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
     cursor: pointer;
-    line-height: 1.1;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+    .card-price {
+        padding: 15px;
+        line-height: 1.1;
+    }
 }
 
 .card-price svg {

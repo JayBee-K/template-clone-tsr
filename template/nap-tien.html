@@ -22,9 +22,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
     <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr.min.css">
-	<link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css">
-<link rel="stylesheet" href="../assets/plugins/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr.min.css">
+    <link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css">
+    <link rel="stylesheet" href="../assets/plugins/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="../assets/fonts/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
 
@@ -93,9 +93,9 @@
                         <li class="d-block">
                             <a href="../alerts-heading.html">Alerts & Heading</a>
                         </li>
-						<li class="d-block">
-							<a href="../module-ve.html">Module Vé</a>
-						</li>
+                        <li class="d-block">
+                            <a href="../module-ve.html">Module Vé</a>
+                        </li>
                     </ul>
                     <span class="sub-icon">+</span>
                 </li>
@@ -134,35 +134,35 @@
                         Topup
                     </a>
                 </li>
-				<li class="d-inline-block hasSub">
-					<a href="javascript:void(0)">
-						Thao tác
-						<i class="fas fa-caret-down"></i>
-					</a>
-					<ul class="list-unstyled mb-0">
-						<li class="d-block">
-							<a href="../template/chuyen-tien.html">
-								Chuyển tiền
-							</a>
-						</li>
-						<li class="d-block">
-							<a href="../template/nap-tien.html">
-								Nạp tiền
-							</a>
-						</li>
-						<li class="d-block">
-							<a href="../template/rut-tien.html">
-								Rút tiền
-							</a>
-						</li>
-					</ul>
-					<span class="sub-icon">+</span>
-				</li>
-				<li class="d-inline-block">
-					<a href="../template/ve.html">
-						Vé
-					</a>
-				</li>
+                <li class="d-inline-block hasSub">
+                    <a href="javascript:void(0)">
+                        Thao tác
+                        <i class="fas fa-caret-down"></i>
+                    </a>
+                    <ul class="list-unstyled mb-0">
+                        <li class="d-block">
+                            <a href="../template/chuyen-tien.html">
+                                Chuyển tiền
+                            </a>
+                        </li>
+                        <li class="d-block">
+                            <a href="../template/nap-tien.html">
+                                Nạp tiền
+                            </a>
+                        </li>
+                        <li class="d-block">
+                            <a href="../template/rut-tien.html">
+                                Rút tiền
+                            </a>
+                        </li>
+                    </ul>
+                    <span class="sub-icon">+</span>
+                </li>
+                <li class="d-inline-block">
+                    <a href="../template/ve.html">
+                        Vé
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="header-user">
@@ -305,30 +305,55 @@
                             <div class="title">
                                 CÁCH 1: NẠP QUỸ THEO SỐ ĐIỆN THOẠI & QR
                             </div>
-                            <div class="desc">
-                                <div class="my-4">
-                                    <p class="text-center h6">Ngân hàng ACB</p>
-                                    <p class="text-center">Số tài khoản: <b>23</b>
-                                        <button type="button" class="btn btn-light btn-sm copy-value btn-vertical-top ml-1"
-                                                data-value="23">
+                            <table class="table table-bordered table-striped table-module">
+                                <thead>
+                                <tr>
+                                    <th>Ngân hàng</th>
+                                    <th colspan="2">Ngân hàng ACB</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Số tài khoản</td>
+                                    <td><b>17212121</b>
+                                        <button type="button"
+                                                class="btn btn-light btn-sm copy-value btn-vertical-top ml-1"
+                                                data-value="17212121">
                                             <i class="fas fa-paste"></i>
                                         </button>
-                                    </p>
-                                    <p class="text-center">Chủ tài khoản: <b>NG</b>
-                                        <button type="button" class="btn btn-light btn-sm copy-value btn-vertical-top ml-1"
-                                                data-value="NG">
+                                    </td>
+                                    <td rowspan="3" class="bg-white">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <img height="140" width="140"
+                                                 src="https://printgo.vn/uploads/media/790919/tao-ma-qr-code-san-pham-1_1620927223.jpg"
+                                                 class="img-fluid"
+                                                 alt="">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Chủ tài khoản</td>
+                                    <td><b>Pham Van A</b>
+                                        <button type="button"
+                                                class="btn btn-light btn-sm copy-value btn-vertical-top ml-1"
+                                                data-value="Pham Van A">
                                             <i class="fas fa-paste"></i>
                                         </button>
-                                    </p>
-                                    <p class="text-center">
-                                        Nội dung chuyển tiền:
-                                        <b class="font-weight-bold text-danger h6">tratien 0943793989</b>
-                                        <button type="button" class="btn btn-light btn-sm copy-value btn-vertical-top ml-1"
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Nội dung thanh toán</td>
+                                    <td><b class="text-danger">tratien 0943793989</b>
+                                        <button type="button"
+                                                class="btn btn-light btn-sm copy-value btn-vertical-top ml-1"
                                                 data-value="tratien 0943793989">
                                             <i class="fas fa-paste"></i>
                                         </button>
-                                    </p>
-                                </div>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="desc">
                                 <p class="text-muted">Bạn hãy chuyển tiền với nội dung bên trên vào một trong các số
                                     tài
                                     khoản dưới đây.
@@ -610,9 +635,9 @@
 <script type="text/javascript"
         src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript"
-		src="../assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr.js"></script>
+        src="../assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr.js"></script>
 <script type="text/javascript"
-		src="../assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr-vn.js"></script>
+        src="../assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr-vn.js"></script>
 <script type="text/javascript" src="../assets/plugins/select2/js/select2.min.js"></script>
 <script type="text/javascript" src="../assets/plugins/swiper/swiper-bundle.min.js"></script>
 <script type="text/javascript" src="../assets/js/app.js"></script>
