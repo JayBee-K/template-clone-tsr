@@ -73,10 +73,53 @@ textarea:focus {
     -webkit-transition: var(--transition-default);
 }
 
-input[type=date].form-control, input[type=datetime-local].form-control, input[type=month].form-control, input[type=time].form-control {
-    appearance: auto;
-    -webkit-appearance: auto;;
-    -moz-appearance: auto;;
+input[type=date].form-control,
+input[type=datetime-local].form-control,
+input[type=month].form-control,
+input[type=time].form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: relative;
+    padding-right: 0;
+    background-color: transparent;
+}
+
+.icon-ios:before {
+    position: absolute;
+    content: "\f133";
+    font-family: "Font Awesome 5 Pro";
+    font-size: 14px;
+    color: var(--gray-700);
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    z-index: -1;
+}
+
+input[type=date].form-control:after,
+input[type=datetime-local].form-control:after,
+input[type=month].form-control:after,
+input[type=time].form-control:after {
+    content: attr(placeholder);
+}
+
+input[type=date].form-control:invalid:after,
+input[type=datetime-local].form-control:invalid:after,
+input[type=month].form-control:invalid:after,
+input[type=time].form-control:invalid:after {
+    content: "";
+}
+
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-calendar-picker-indicator,
+input[type=datetime-local]::-webkit-inner-spin-button,
+input[type=datetime-local]::-webkit-calendar-picker-indicator,
+input[type=month]::-webkit-inner-spin-button,
+input[type=month]::-webkit-calendar-picker-indicator,
+input[type=time]::-webkit-inner-spin-button,
+input[type=time]::-webkit-calendar-picker-indicator {
+    opacity: 0;
 }
 
 p,
@@ -1270,7 +1313,7 @@ h6, .h6 {
     padding: 5px 15px;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1025px) {
     .header-m1 .header-navigation > ul > li > ul {
         position: absolute;
         margin-top: -2px;
@@ -1485,7 +1528,7 @@ h6, .h6 {
     order: 2;
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1024px) {
     .header-m1 .container {
         justify-content: center;
         padding-top: 7px;
@@ -2411,7 +2454,7 @@ h6, .h6 {
 
 .card-topup .card-image {
     border-radius: 12px;
-    box-shadow: rgb(0 0 0 / 10%) 0 0 0.5em, rgb(0 0 0 / 5%) 0 0 0 1px;
+    box-shadow: rgba(0, 0, 0, .1) 0 0 0.5em, rgba(0, 0, 0, .05) 0 0 0 1px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2451,7 +2494,7 @@ h6, .h6 {
 }
 
 .card-topup:hover .card-image {
-    box-shadow: rgb(0 0 0 / 35%) 0 0 0.5em, rgb(0 0 0 / 25%) 0 0 0 1px;
+    box-shadow: rgba(0, 0, 0, .35) 0 0 0.5em, rgba(0, 0, 0, .25) 0 0 0 1px;
 }
 
 .card-topup:hover .card-title {
