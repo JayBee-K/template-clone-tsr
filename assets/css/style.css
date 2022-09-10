@@ -856,11 +856,7 @@ h6, .h6 {
     background: var(--primary-color);
 }
 
-@media screen and (max-width: 991px) {
-    .tabs-m1 .nav-tabs {
-        justify-content: flex-start;
-    }
-
+@media screen and (max-width: 1025px) {
     .tabs-m1 .nav-tabs .nav-item .nav-link {
         display: inline-flex;
         width: auto;
@@ -872,6 +868,12 @@ h6, .h6 {
         margin-right: 8px;
         margin-bottom: 6px;
         margin-left: 0 !important;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .tabs-m1 .nav-tabs {
+        justify-content: flex-start;
     }
 }
 
@@ -1482,7 +1484,6 @@ h6, .h6 {
 .header-m1.header-sort .header-user {
     order: 2;
 }
-
 
 @media screen and (max-width: 991px) {
     .header-m1 .container {
@@ -2401,10 +2402,11 @@ h6, .h6 {
     display: flex;
     flex-direction: column;
     padding: 0;
-    border: 0;
+    border: 0 solid transparent;
     border-radius: 0;
     background-color: transparent;
     transition: var(--transition-default);
+    outline: 0 !important;
 }
 
 .card-topup .card-image {
@@ -3856,6 +3858,10 @@ a.card-service:hover {
 }
 
 @media screen and (max-width: 991px) {
+    .section-banner .swiper-slide {
+        padding: 30px 0;
+    }
+
     .section-banner .swiper-slide .section-banner_title {
         font-size: 1.6em;
         text-align: center;

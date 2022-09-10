@@ -2,7 +2,6 @@
 	'use strict';
 	let windowWidth = $(window).width();
 
-
 	let initFromModule1 = function () {
 		let elmWrapper = $('#createRow');
 		$('#createRow').on('click', '.addRow', function () {
@@ -80,7 +79,7 @@
 	 * Add thêm class vào để sắp xếp lại header
 	 */
 	let initReOrderHeader = function () {
-		if (windowWidth > 991) {
+		if (windowWidth > 1024) {
 			let elmHeader = $('#header-m1'),
 				widthContainer = parseInt(elmHeader.children('.container').width()),
 				widthNavigation = parseInt(elmHeader.children('.container').children('.header-navigation').width()),
