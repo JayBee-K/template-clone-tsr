@@ -73,6 +73,12 @@ textarea:focus {
     -webkit-transition: var(--transition-default);
 }
 
+input[type=date].form-control, input[type=datetime-local].form-control, input[type=month].form-control, input[type=time].form-control {
+    appearance: auto;
+    -webkit-appearance: auto;;
+    -moz-appearance: auto;;
+}
+
 p,
 ul,
 pre,
