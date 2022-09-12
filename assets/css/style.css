@@ -31,7 +31,7 @@ body {
 }
 
 a {
-	color: #33314e;
+	color: #222222;
 }
 
 a, a:hover, a:focus {
@@ -44,7 +44,7 @@ a, a:hover, a:focus {
 }
 
 a:hover, a:focus {
-	color: #64608e;
+	color: var(--primary-color);
 }
 
 button, button:hover, button:focus {
@@ -1465,8 +1465,8 @@ h6, .h6 {
 	/*font-size: 13.5px;*/
 	background-color: var(--primary-color);
 	border-radius: 3px;
-	height: 33px;
-	line-height: 27px;
+	height: 31px;
+	line-height: 25px;
 	font-size: 12px;
 	white-space: nowrap;
 }
