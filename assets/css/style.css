@@ -2666,7 +2666,7 @@ h6, .h6 {
 
 .information-inner .card .card-body .information-form {
 	position: relative;
-	padding: 0 20px 20px;
+	padding: 0 10px 20px;
 	overflow: hidden;
 }
 
@@ -2686,7 +2686,7 @@ h6, .h6 {
 	width: 13px;
 	height: 13px;
 	border-radius: 50%;
-	background: var(--color-main);
+	background: var(--primary-color);
 	animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 
