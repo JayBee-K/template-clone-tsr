@@ -198,6 +198,23 @@
         }
     }
 
+    let initSlideBanner02 = function () {
+        if ($('#slideBanner_m2').length > 0) {
+            new Swiper('#slideBanner_m2', {
+                loop: false,
+                simulateTouch: false,
+                speed: 250,
+                navigation: {
+                    nextEl: '#slideBanner_m2 .slide-button-next',
+                    prevEl: '#slideBanner_m2 .slide-button-prev',
+                },
+                autoplay: {
+                    delay: 10000,
+                    disableOnInteraction: false,
+                },
+            });
+        }
+    }
 
     $(function () {
         initFromModule1();
@@ -207,6 +224,7 @@
         initHeaderMobile();
         initHeaderScroll();
         initSlideBanner();
+        initSlideBanner02();
         $(document).on('click', '.copy-value', function () {
             if ($(this).attr('data-value') != undefined) {
                 initClipboardCopy($(this).attr('data-value'));
