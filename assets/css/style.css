@@ -4016,3 +4016,9 @@ a.card-service:hover {
 }
 
 /* End Custom Banner */
+
+@media screen and (max-width: 991px) {
+	.text-xs-nowrap {
+		white-space: nowrap;
+	}
+}
