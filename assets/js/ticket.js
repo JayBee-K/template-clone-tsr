@@ -140,7 +140,6 @@
 			return temp;
 		}
 
-
 		let handlePrice = function (elm) {
 			let elm_frm = elm.closest('form'),
 				ticket_length = elm_frm.find('.random-event.active').length,
@@ -296,6 +295,30 @@
 			});
 		}
 
+
+		let arrNumbers = [];
+		let handleRenderOnlyBall = function (elm, frm, key) {
+			if (!arrNumbers.hasOwnProperty(key)) {
+				arrNumbers[key] = [];
+			}
+			if (!elm.hasClass("active")) {
+				arrNumbers[key].push(parseInt(elm.text()));
+				elm.addClass('active');
+			} else {
+				arrNumbers[key] = arrNumbers[key].filter(item => item !== parseInt(elm.text()))
+				elm.removeClass('active');
+			}
+		}
+		let handleChooseNumberTicketPopup = function () {
+			$(document).on('click', '.ticket-choose_number', function () {
+				let elm = $(this),
+					key = elm.closest('.ticket-popup').find('.ticket-popup_header > .ticket-popup_seri').text().toLowerCase().trim(),
+					frm = elm.closest('.modal-ticket').attr('data-form');
+
+				handleRenderOnlyBall(elm, frm, key);
+			});
+		}
+
 		let handleClearTicketPopup = function () {
 			$(document).on('click', '.ticket-clear', function () {
 				let ticket_number = $(this).closest('.ticket-popup_body').find('.ticket-popup_numbers > span');
@@ -315,19 +338,13 @@
 			});
 		}
 
-		let handleCloseTicketPopup = function () {
-			$(document).on('click', '.ticket-popup_close', function () {
-				$(this).closest('.modal-ticket').modal('hide');
-			});
-		}
-
 		$(function () {
 			handleRandomNumber($('#random-type_655'), 55);
 			handleCallTicketPopup($('#random-type_655'), $('#modalTicket-655'));
 
 			handleRandomTicketPopup();
+			handleChooseNumberTicketPopup();
 			handleClearTicketPopup();
-			handleCloseTicketPopup();
 
 			handleSubmitTicket($('#random-type_655'));
 
