@@ -128,6 +128,37 @@
 		elm.find('.random-time').val(arrValueTime);
 	}
 
+	let popupPrice = function (elm) {
+		$('.handleDropdownTime').on('click', '.dropdown-list_item', function (e) {
+			e.stopPropagation();
+			let elm_event = $(this);
+
+			if (elm_event.hasClass('active')) {
+				if (elm_event.closest('.handleDropdownTime').find('.dropdown-list_item.active').length == 1) {
+					return false;
+				}
+				elm_event.removeClass('active');
+			} else {
+				elm_event.addClass('active');
+			}
+		});
+
+		$('.handleDropdownTime').on('click', '.handleDropdownClose', function () {
+			let elm_event = $(this), elm_dropdown = elm_event.closest('.handleDropdownTime'),
+				elm_active = elm_dropdown.find('.dropdown-list_item.active'),
+				elm_item_preview = elm_dropdown.find('.dropdown-toggle span');
+
+			if (elm_active.length === 1) {
+				elm_item_preview.text(elm_active.text());
+			} else {
+				elm_item_preview.text(`Đã chọn ${elm_active.length} kỳ`);
+			}
+
+			handleFillTime(elm_dropdown);
+			handlePrice(elm_event);
+		});
+	}
+
 	let formatPrice = function (price, format = '.') {
 		let arrayPrice = [];
 		var x = price;
@@ -157,11 +188,13 @@
 		// Xử lý và render giá tiền
 		let elm_frm = elm.closest('form'), ticket_length = elm_frm.find('.random-event.active').length,
 			elm_price = elm_frm.find('.unit-price'),
+			elm_input_price = elm_frm.find('input[name="unit-price"]'),
 			unit_price = elm_frm.find('.handleDropdownType .dropdown-list_item.active').attr('data-price'),
 			number_time = elm_frm.find('.handleDropdownTime .dropdown-list_item.active').length,
 			return_price = (ticket_length * unit_price * number_time).toString();
 
 		elm_price.html(formatPrice(return_price) + '&nbsp;<span>vnđ</span>');
+		elm_input_price.val(return_price);
 	};
 
 	/***
@@ -171,19 +204,19 @@
 	 */
 
 	let arrNumbers = [];
-	let handleRandom = function (length, max) {
+	let handleRandom = function (length, max, start = 1) {
 		// Random n số bóng
 		let arrNumbers = [];
 		// Get được mảng number bao gồm bộ số từ 1 -> tối đa max_rangeNumber
-		for (let i = 0; i < max; i++) {
+		for (let i = 0; i < parseInt(max); i++) {
 			arrNumbers.push({
-				number: i + 1, time: 0
+				number: i + parseInt(start), time: 0
 			});
 		}
 
 		// Chạy n lần để tìm ra các con số xuất hiện nhiều lần
 		for (let i = 0; i < 100000; i++) {
-			let number = Math.floor(Math.random() * max) + 1;
+			let number = Math.floor(Math.random() * parseInt(max)) + 1;
 			arrNumbers[number - 1].time++;
 		}
 
@@ -208,14 +241,14 @@
 		return arrTicket;
 	}
 
-	let handleRenderRandom = function (elm, max_rangeNumber, isModal = false, type = 1) {
+	let handleRenderRandom = function (elm, max_rangeNumber, isModal = false, start = 1, type = 1) {
 		// Render số ra view và fill vào input
 		let elmBox = elm.closest('.random-box'),
 			elmBox_key = elmBox.attr('data-key'),
 			childLength_elmBox = elmBox.find('.random-number');
 
 		if (type === 1) {
-			let arrTicket = handleRandom(childLength_elmBox.length, max_rangeNumber);
+			let arrTicket = handleRandom(childLength_elmBox.length, max_rangeNumber, start);
 			// Render ra view
 
 			for (let i = 0; i < childLength_elmBox.length; i++) {
@@ -241,11 +274,11 @@
 		handlePrice(elm);
 	}
 
-	let handleRandomNumber = function (elm, max_rangeNumber) {
+	let handleRandomNumber = function (elm, max_rangeNumber, start = 1) {
 		// Xử lý random khi click vào button chọn của từng dãy
 		if (elm.length) {
 			elm.on('click', '.random-event', function () {
-				handleRenderRandom($(this), max_rangeNumber, false, (!$(this).hasClass('active') ? 1 : 0));
+				handleRenderRandom($(this), max_rangeNumber, false, start, (!$(this).hasClass('active') ? 1 : 0));
 			});
 
 			elm.on('click', '.random-event_quick', function () {
@@ -315,9 +348,10 @@
 		$(document).on('click', '.ticket-random', function () {
 			let key = $(this).closest('.ticket-popup').find('.ticket-popup_header > .ticket-popup_seri').text().toLowerCase().trim(),
 				frm = $(this).closest('.modal-ticket').attr('data-form'),
-				max_rangeNumber = $(this).closest('.modal-ticket').attr('data-ball');
+				max_rangeNumber = $(this).closest('.modal-ticket').attr('data-ball'),
+				start = $(this).closest('.modal-ticket').attr('data-start') ?? 1;
 
-			handleRenderRandom($(frm).find(`.random-box[data-key=${key}]`).find('.random-event'), max_rangeNumber, true);
+			handleRenderRandom($(frm).find(`.random-box[data-key=${key}]`).find('.random-event'), max_rangeNumber, true, start);
 		});
 	}
 
@@ -389,9 +423,10 @@
 				let key = $(this).closest('.ticket-popup').find('.ticket-popup_header > .ticket-popup_seri').text().toLowerCase().trim(),
 					frm = $(this).closest('.modal-ticket').attr('data-form'),
 					max_rangeNumber = $(this).closest('.modal-ticket').attr('data-ball'),
+					start = $(this).closest('.modal-ticket').attr('data-start'),
 					type = !$(frm).find(`.random-box[data-key=${key}]`).find('.random-event').hasClass('active') ? 1 : 0;
 
-				handleRenderRandom($(frm).find(`.random-box[data-key=${key}]`).find('.random-event'), max_rangeNumber, false, type);
+				handleRenderRandom($(frm).find(`.random-box[data-key=${key}]`).find('.random-event'), max_rangeNumber, false, start, type);
 			}
 		});
 	}
@@ -419,6 +454,11 @@
 		handleCallTicketPopup($('#random-type_645'), $('#modalTicket-645'));
 		handleSubmitTicket($('#random-type_645'));
 
+		// Vietlott 3D Max
+		handleRandomNumber($('#random-type_3dmax'), 10, 0);
+		handleCallTicketPopup($('#random-type_3dmax'), $('#modalTicket-3dmax'));
+		handleSubmitTicket($('#random-type_3dmax'));
+
 		// Dùng chung
 		handleRandomTicketPopup();
 		handleChooseNumberTicketPopup();
@@ -436,7 +476,10 @@
 
 		dropdownType();
 		dropdownTime();
+		popupPrice();
 
 		ticketSlider();
+
+		$('#modalTicket-price').modal('show');
 	});
 })(jQuery);
