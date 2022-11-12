@@ -202,7 +202,7 @@
 		}
 
 		// Chạy n lần để tìm ra các con số xuất hiện nhiều lần
-		for (let i = 0; i < 10; i++) {
+		for (let i = 0; i < 100000; i++) {
 			let number = Math.floor(Math.random() * parseInt(max)) + 1;
 			arrNumbers[number - 1].time++;
 		}
@@ -228,25 +228,65 @@
 		return arrTicket;
 	}
 
+	let handleRandom3D = function () {
+		// Random n số bóng
+		let arrNumbers = [];
+		// Get được mảng number bao gồm bộ số từ 1 -> tối đa max_rangeNumber
+
+		for (let i = 0; i < 10; i++) {
+			arrNumbers.push({
+				number: i, time: 0
+			});
+		}
+
+		// Chạy n lần để tìm ra các con số xuất hiện nhiều lần
+		for (let i = 0; i < 100000; i++) {
+			let number = Math.floor(Math.random() * 10) + 1;
+			arrNumbers[number - 1].time++;
+		}
+
+		// Sắp xếp lại mảng theo thứ tự xuất hiện nhiều lần đến ít
+		arrNumbers.sort(function (a, b) {
+			return b.time - a.time
+		});
+
+		return arrNumbers[0].number;
+	}
+
 	let handleRenderRandom = function (elm, max_rangeNumber, isModal = false, type = 1) {
 		// Render số ra view và fill vào input
-		let elmBox = elm.closest('.random-box'), elmBox_key = elmBox.attr('data-key'),
-			childLength_elmBox = elmBox.find('.random-number');
+		let elmBox = elm.closest('.random-box'),
+			elmBox_key = elmBox.attr('data-key'),
+			childLength_elmBox = elmBox.find('.random-number'),
+			elm_frm_type = elm.closest('form').attr('data-type'),
+			elmBox_list = elmBox.find('.random-list .random-number');
 
 		if (type === 1) {
-			let arrTicket = handleRandom(childLength_elmBox.length, max_rangeNumber);
-			// Render ra view
+			if (elm_frm_type === 'v-3d') {
+				if (elmBox_list.length) {
+					elmBox_list.each(function () {
+						$(this).find('span').text(handleRandom3D());
+						$(this).find('.random-number_value').val(handleRandom3D());
+					})
+				} else {
+					return false;
+				}
 
-			for (let i = 0; i < childLength_elmBox.length; i++) {
-				$(childLength_elmBox[i]).find('.random-number_preview').text(arrTicket[i]);
-				$(childLength_elmBox[i]).find('.random-number_value').val(arrTicket[i]);
+			} else {
+				let arrTicket = handleRandom(childLength_elmBox.length, max_rangeNumber);
+
+				// Render ra view
+				for (let i = 0; i < childLength_elmBox.length; i++) {
+					$(childLength_elmBox[i]).find('.random-number_preview').text(arrTicket[i]);
+					$(childLength_elmBox[i]).find('.random-number_value').val(arrTicket[i]);
+				}
+
+				if (isModal) {
+					$(childLength_elmBox[0]).trigger('click');
+				}
+
+				arrNumbers[elmBox_key] = arrTicket;
 			}
-
-			if (isModal) {
-				$(childLength_elmBox[0]).trigger('click');
-			}
-
-			arrNumbers[elmBox_key] = arrTicket;
 		} else {
 			if (!isModal) {
 				elmBox.find('.random-number_preview').text('');
@@ -255,8 +295,11 @@
 
 			arrNumbers[elmBox_key] = [];
 		}
-
-		elm.toggleClass('active');
+		if (!isModal) {
+			elm.toggleClass('active');
+		} else {
+			elm.addClass('active');
+		}
 		handlePrice(elm);
 	}
 
@@ -272,60 +315,6 @@
 				getRowNoActiveFirst.trigger('click');
 			});
 		}
-	}
-
-	function handleCallPopupPrice(elm) {
-		if (elm.length) {
-			elm.on('click', '.random-price_event', function () {
-				let value = $(this).attr('data-value'), key = $(this).closest('.random-box').attr('data-key');
-				popupPrice(value, key)
-			});
-		}
-	}
-
-	let popupPrice = function (value, key) {
-		$('#modalTicket-price .price-list_item').removeClass('active');
-		$(`#modalTicket-price .price-list_item[data-value="${value}"]`).addClass('active');
-		$('#modalTicket-price').attr('data-key', key).modal('show');
-		functionTest1();
-		handleClosePopupPrice();
-	}
-
-	let functionTest1 = function () {
-		$('#modalTicket-price').on('click', '.price-list_item', function (e) {
-			let elm_event = $(this), elm_modal = elm_event.closest('.modal-price'),
-				elm_item_price = elm_modal.find('.price-list_item');
-
-			if (elm_event.hasClass('active')) {
-				return false;
-			} else {
-				elm_item_price.removeClass('active');
-				elm_event.addClass('active');
-
-				elm_modal.find('.handlePriceClose').attr('data-key', elm_modal.attr('data-key'));
-			}
-		})
-	}
-
-	let handleClosePopupPrice = function () {
-		$('#modalTicket-price').on('click', '.handlePriceClose', function (e) {
-			let elm_event = $(this), elm_modal = elm_event.closest('.modal-price'),
-				elm_active = elm_modal.find('.price-list_item.active'),
-				elm_active_value = elm_active.attr('data-value'), elm_active_format = elm_active.attr('data-format'),
-				frm = elm_modal.attr('data-form'), key = elm_event.attr('data-key');
-
-			if (elm_active.length == 1) {
-				$(frm).find(`.random-box[data-key=${key}] .random-price_event`).attr('data-value', elm_active_value);
-				$(frm).find(`.random-box[data-key=${key}] .random-price_event span`).text(elm_active_format);
-				$('#modalTicket-price').modal('hide');
-				if ($(frm).find(`.random-box[data-key=${key}] .random-event.active`).length) {
-					handlePrice($(frm).find(`.random-box[data-key=${key}] .random-event.active`));
-				}
-			} else {
-				console.log('Có lỗi xảy ra, vui lòng thử lại!');
-				return false;
-			}
-		});
 	}
 
 	let handleSubmitTicket = function (elm) {
@@ -478,6 +467,60 @@
 		}
 	}
 
+	function handleCallPopupPrice(elm) {
+		if (elm.length) {
+			elm.on('click', '.random-price_event', function () {
+				let value = $(this).attr('data-value'), key = $(this).closest('.random-box').attr('data-key');
+				popupPrice(value, key)
+			});
+		}
+	}
+
+	let popupPrice = function (value, key) {
+		$('#modalTicket-price .price-list_item').removeClass('active');
+		$(`#modalTicket-price .price-list_item[data-value="${value}"]`).addClass('active');
+		$('#modalTicket-price').attr('data-key', key).modal('show');
+		handleChoosePriceItem();
+		handleClosePopupPrice();
+	}
+
+	let handleChoosePriceItem = function () {
+		$('#modalTicket-price').on('click', '.price-list_item', function (e) {
+			let elm_event = $(this), elm_modal = elm_event.closest('.modal-price'),
+				elm_item_price = elm_modal.find('.price-list_item');
+
+			if (elm_event.hasClass('active')) {
+				return false;
+			} else {
+				elm_item_price.removeClass('active');
+				elm_event.addClass('active');
+
+				elm_modal.find('.handlePriceClose').attr('data-key', elm_modal.attr('data-key'));
+			}
+		})
+	}
+
+	let handleClosePopupPrice = function () {
+		$('#modalTicket-price').on('click', '.handlePriceClose', function (e) {
+			let elm_event = $(this), elm_modal = elm_event.closest('.modal-price'),
+				elm_active = elm_modal.find('.price-list_item.active'),
+				elm_active_value = elm_active.attr('data-value'), elm_active_format = elm_active.attr('data-format'),
+				frm = elm_modal.attr('data-form'), key = elm_event.attr('data-key');
+
+			if (elm_active.length == 1) {
+				$(frm).find(`.random-box[data-key=${key}] .random-price_event`).attr('data-value', elm_active_value);
+				$(frm).find(`.random-box[data-key=${key}] .random-price_event span`).text(elm_active_format);
+				$('#modalTicket-price').modal('hide');
+				if ($(frm).find(`.random-box[data-key=${key}] .random-event.active`).length) {
+					handlePrice($(frm).find(`.random-box[data-key=${key}] .random-event.active`));
+				}
+			} else {
+				console.log('Có lỗi xảy ra, vui lòng thử lại!');
+				return false;
+			}
+		});
+	}
+
 	$(function () {
 		// Vietlott 6-55
 		handleRandomNumber($('#random-type_655'), 55);
@@ -491,6 +534,8 @@
 
 		// Vietlott 3D Max
 		handleCallPopupPrice($('#random-type_3dmax'));
+		handleRandomNumber($('#random-type_3dmax'), 10);
+		handleCallTicketPopup($('#random-type_3dmax'), $('#modalTicket-3dmax'));
 		handleSubmitTicket($('#random-type_3dmax'));
 
 		// Dùng chung
