@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 	<title>Clone thẻ siêu rẻ</title>
 	<meta name="description" content="Clone thẻ siêu rẻ">
@@ -20,7 +20,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap"
-		  rel="stylesheet">
+	      rel="stylesheet">
 	<link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr.min.css">
 	<link rel="stylesheet" href="../assets/plugins/select2/css/select2.min.css">
@@ -29,18 +29,18 @@
 	<link rel="stylesheet" href="../assets/css/style.css">
 
 	<style>
-		:root {
-			--primary-color: #013290;
-			--primary-hover: #0c2a6b;
-			--primary-rgb: 1, 36, 103;
-		}
+        :root {
+            --primary-color: #013290;
+            --primary-hover: #0c2a6b;
+            --primary-rgb: 1, 36, 103;
+        }
 	</style>
 </head>
 
 <body>
 
-<div class="modal fade modal-module modal-ticket" id="modalTicket-3dmax" data-length="6" data-ball="10" data-start="0"
-	 data-form="#random-type_3dmax">
+<div class="modal fade modal-module modal-ticket" id="modalTicket-3dmax" data-length="3" data-ball="10"
+     data-form="#random-type_3dmax">
 	<div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-body">
@@ -289,7 +289,9 @@
 	</div>
 </div>
 
-<div class="modal fade modal-module modal-price" id="modalTicket-price" data-form="#random-type_3dmax">
+<div class="modal fade modal-module modal-price" id="modalTicket-price" data-backdrop="static"
+     data-key=""
+     data-form="#random-type_3dmax">
 	<div class="modal-dialog modal-sm modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-body">
@@ -299,31 +301,45 @@
 					</div>
 					<div class="price-popup_body">
 						<div class="price-popup_list">
-							<a href="javascript:void(0)" class="price-list_item active" data-value="10000">
+							<a href="javascript:void(0)" class="price-list_item active"
+							   data-format="10K"
+							   data-value="10000">
 								10.000đ
 							</a>
-							<a href="javascript:void(0)" class="price-list_item" data-value="20000">
+							<a href="javascript:void(0)" class="price-list_item"
+							   data-format="20K"
+							   data-value="20000">
 								20.000đ
 							</a>
-							<a href="javascript:void(0)" class="price-list_item" data-value="50000">
+							<a href="javascript:void(0)" class="price-list_item"
+							   data-format="50K"
+							   data-value="50000">
 								50.000đ
 							</a>
-							<a href="javascript:void(0)" class="price-list_item" data-value="100000">
+							<a href="javascript:void(0)" class="price-list_item"
+							   data-format="100K"
+							   data-value="100000">
 								100.000đ
 							</a>
-							<a href="javascript:void(0)" class="price-list_item" data-value="200000">
+							<a href="javascript:void(0)" class="price-list_item"
+							   data-format="200K"
+							   data-value="200000">
 								200.000đ
 							</a>
-							<a href="javascript:void(0)" class="price-list_item" data-value="500000">
+							<a href="javascript:void(0)" class="price-list_item"
+							   data-format="500K"
+							   data-value="500000">
 								500.000đ
 							</a>
-							<a href="javascript:void(0)" class="price-list_item" data-value="1000000">
+							<a href="javascript:void(0)" class="price-list_item"
+							   data-format="1.000K"
+							   data-value="1000000">
 								1.000.000đ
 							</a>
 						</div>
 					</div>
 					<div class="price-popup_footer">
-						<span class="" role="button">Đóng</span>
+						<span class="handlePriceClose" role="button">Đóng</span>
 					</div>
 				</div>
 			</div>
@@ -338,14 +354,14 @@
 		</div>
 		<a class="header-logo" href="https://thesieure.com">
 			<img src="https://thesieure.com/storage/userfiles/images/logo_thesieurecom.png" height="40px"
-				 class="img-fluid" alt="">
+			     class="img-fluid" alt="">
 		</a>
 		<div class="header-navigation">
 			<ul class="list-unstyled mb-0">
 				<li class="d-lg-none d-inline-block navigation-logo text-center">
 					<a href="https://thesieure.com">
 						<img src="https://thesieure.com/storage/userfiles/images/logo_thesieurecom.png" height="40px"
-							 class="img-fluid" alt="">
+						     class="img-fluid" alt="">
 					</a>
 				</li>
 				<li class="d-inline-block">
@@ -534,8 +550,8 @@
 					<li class="d-inline-block text-center header-usermb_list__logo">
 						<a href="https://thesieure.com">
 							<img src="https://thesieure.com/storage/userfiles/images/logo_thesieurecom.png"
-								 height="40px"
-								 class="img-fluid" alt="">
+							     height="40px"
+							     class="img-fluid" alt="">
 						</a>
 					</li>
 					<li class="d-inline-block header-usermb_list__title">
@@ -602,18 +618,18 @@
 						</div>
 						<div class="card-body">
 							<div class="random-wrap position-relative">
-								<form action="" id="random-type_3dmax">
+								<form action="" data-type="v-3d" id="random-type_3dmax">
 									<div class="random-dropdown">
 										<div class="dropdown dropdown-type handleDropdownType">
 											<div type="button" class="dropdown-toggle"
-												 data-toggle="dropdown">
+											     data-toggle="dropdown">
 												<i class="fas fa-ticket-alt"></i>
 												<span>Cơ bản</span>
 											</div>
 										</div>
 										<div class="dropdown dropdown-time handleDropdownTime">
 											<div type="button" class="dropdown-toggle"
-												 data-toggle="dropdown">
+											     data-toggle="dropdown">
 												<i class="fas fa-calendar-alt"></i>
 												<span>#00800 - 10/11/2022</span>
 												<input type="hidden" class="random-time" name="times[]" value="00800">
@@ -650,7 +666,7 @@
 												</div>
 												<div class="dropdown-footer">
 													<button type="button"
-															class="handleDropdownClose btn btn-small btn-theme_primary">
+													        class="handleDropdownClose btn btn-small btn-theme_primary">
 														Xác nhận
 													</button>
 												</div>
@@ -659,7 +675,7 @@
 									</div>
 									<div class="random-body">
 										<div data-index="0" data-key="a"
-											 class="random-item_3dmax random-item random-box d-flex align-items-center justify-content-between">
+										     class="random-item_3dmax random-item random-box d-flex align-items-center justify-content-between">
 											<div class="random-position random-circle">
 												A
 											</div>
@@ -681,10 +697,17 @@
 												<a href="javascript:void(0)" class="random-button random-event">
 													<i class="fas fa-sync-alt"></i>
 												</a>
+												<a href="javascript:void(0)" class="random-price random-price_event"
+												   data-value="10000">
+													<span>
+														10K
+													</span>
+													<input type="hidden" class="random-number_price" name="price_a[]">
+												</a>
 											</div>
 										</div>
 										<div data-index="1" data-key="b"
-											 class="random-item_3dmax random-item random-box d-flex align-items-center justify-content-between">
+										     class="random-item_3dmax random-item random-box d-flex align-items-center justify-content-between">
 											<div class="random-position random-circle">
 												B
 											</div>
@@ -706,10 +729,17 @@
 												<a href="javascript:void(0)" class="random-button random-event">
 													<i class="fas fa-sync-alt"></i>
 												</a>
+												<a href="javascript:void(0)" class="random-price random-price_event"
+												   data-value="10000">
+													<span>
+														10K
+													</span>
+													<input type="hidden" class="random-number_price" name="price_b[]">
+												</a>
 											</div>
 										</div>
 										<div data-index="2" data-key="c"
-											 class="random-item_3dmax random-item random-box d-flex align-items-center justify-content-between">
+										     class="random-item_3dmax random-item random-box d-flex align-items-center justify-content-between">
 											<div class="random-position random-circle">
 												C
 											</div>
@@ -731,10 +761,17 @@
 												<a href="javascript:void(0)" class="random-button random-event">
 													<i class="fas fa-sync-alt"></i>
 												</a>
+												<a href="javascript:void(0)" class="random-price random-price_event"
+												   data-value="10000">
+													<span>
+														10K
+													</span>
+													<input type="hidden" class="random-number_price" name="price_c[]">
+												</a>
 											</div>
 										</div>
 										<div data-index="3" data-key="d"
-											 class="random-item_3dmax random-item random-box d-flex align-items-center justify-content-between">
+										     class="random-item_3dmax random-item random-box d-flex align-items-center justify-content-between">
 											<div class="random-position random-circle">
 												D
 											</div>
@@ -756,10 +793,17 @@
 												<a href="javascript:void(0)" class="random-button random-event">
 													<i class="fas fa-sync-alt"></i>
 												</a>
+												<a href="javascript:void(0)" class="random-price random-price_event"
+												   data-value="10000">
+													<span>
+														10K
+													</span>
+													<input type="hidden" class="random-number_price" name="price_d[]">
+												</a>
 											</div>
 										</div>
 										<div data-index="4" data-key="e"
-											 class="random-item_3dmax random-item random-box d-flex align-items-center justify-content-between">
+										     class="random-item_3dmax random-item random-box d-flex align-items-center justify-content-between">
 											<div class="random-position random-circle">
 												E
 											</div>
@@ -781,10 +825,17 @@
 												<a href="javascript:void(0)" class="random-button random-event">
 													<i class="fas fa-sync-alt"></i>
 												</a>
+												<a href="javascript:void(0)" class="random-price random-price_event"
+												   data-value="10000">
+													<span>
+														10K
+													</span>
+													<input type="hidden" class="random-number_price" name="price_e[]">
+												</a>
 											</div>
 										</div>
 										<div data-index="5" data-key="f"
-											 class="random-item_3dmax random-item random-box d-flex align-items-center justify-content-between">
+										     class="random-item_3dmax random-item random-box d-flex align-items-center justify-content-between">
 											<div class="random-position random-circle">
 												F
 											</div>
@@ -806,8 +857,12 @@
 												<a href="javascript:void(0)" class="random-button random-event">
 													<i class="fas fa-sync-alt"></i>
 												</a>
-												<a href="javascript:void(0)" class="random-price random-price_event">
-													10K
+												<a href="javascript:void(0)" class="random-price random-price_event"
+												   data-value="10000">
+													<span>
+														10K
+													</span>
+													<input type="hidden" class="random-number_price" name="price_f[]">
 												</a>
 											</div>
 										</div>
@@ -819,13 +874,13 @@
 										</div>
 										<div class="random-button">
 											<button type="button"
-													class="btn btn-default font-weight-bolder btn-theme_primary w-100 random-event_quick">
+											        class="btn btn-default font-weight-bolder btn-theme_primary w-100 random-event_quick">
 												CHỌN NHANH
 											</button>
 										</div>
 										<div class="random-button random-button_submit">
 											<button type="submit"
-													class="btn btn-default font-weight-bolder btn-theme_ticket w-100">
+											        class="btn btn-default font-weight-bolder btn-theme_ticket w-100">
 												MUA NGAY
 											</button>
 										</div>
@@ -1107,7 +1162,7 @@
 								<div class="result-title">
 									<b>Kỳ QSMT tiếp theo:</b>
 								</div>
-								<div class="event-countdown" data-date="2022/11/18 18:00:00">
+								<div class="event-countdown" data-date="2022/11/30 18:00:00">
 									<div class="result-countdown">
 										<div class="result-countdown_item">
 											<div class="event-countdown_days countdown-item_value days">
@@ -1257,7 +1312,7 @@
 					<div class="footer-dropdown d-flex align-items-center justify-content-end">
 						<div class="dropdown dropdown-wrap ml-2">
 							<button class="btn btn-dropdown dropdown-toggle" type="button" id="dropdownLanguage"
-									data-toggle="dropdown" aria-expanded="false">
+							        data-toggle="dropdown" aria-expanded="false">
 								<i class="fas fa-globe"></i>
 								<span>Tiếng Việt</span>
 							</button>
@@ -1277,11 +1332,11 @@
 
 <script type=" text/javascript" src="../assets/plugins/jquery.min.js"></script>
 <script type="text/javascript"
-		src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        src="../assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script type="text/javascript"
-		src="../assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr.js"></script>
+        src="../assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr.js"></script>
 <script type="text/javascript"
-		src="../assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr-vn.js"></script>
+        src="../assets/plugins/bootstrap-flatpickr/bootstrap-flatpickr-vn.js"></script>
 <script type="text/javascript" src="../assets/plugins/select2/js/select2.min.js"></script>
 <script type="text/javascript" src="../assets/plugins/swiper/swiper-bundle.min.js"></script>
 <script type="text/javascript" src="../assets/js/app.js"></script>
