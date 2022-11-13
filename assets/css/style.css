@@ -4648,7 +4648,7 @@ a.card-service:hover {
 }
 
 .ticket-popup .ticket-popup_header .ticket-popup_seri {
-    font-size: 1.35em;
+    font-size: 1.25em;
     font-weight: 500;
 }
 
@@ -4742,6 +4742,65 @@ a.card-service:hover {
     content: "\f00c";
 }
 
+.ticket-popup .ticket-popup_body .ticket-popup_3d {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.ticket-popup .ticket-popup_body .ticket-popup_3d .ticket-popup_numbers--list {
+    display: flex;
+    gap: 5px;
+}
+
+.ticket-popup .ticket-popup_body .ticket-popup_3d .ticket-popup_numbers--list .ticket-popup_numbers {
+    flex-direction: column;
+    width: 30px;
+    gap: 5px;
+}
+
+.ticket-popup .ticket-popup_body .ticket-popup_3d .ticket-popup_numbers--list .ticket-popup_numbers > span {
+    width: 100%;
+}
+
+.ticket-popup .ticket-popup_body .ticket-popup_3d .ticket-popup_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80px;
+    margin-top: 0;
+}
+
+.ticket-popup .ticket-popup_body .ticket-popup_3d .ticket-popup_buttons .ticket-popup_prices {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ticket-popup .ticket-popup_body .ticket-popup_3d .ticket-popup_buttons .ticket-popup_prices > .ticket-popup_prices--item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid var(--gray-200);
+    padding: 4px 5px 3px;
+    background: #fbfbfb;
+    vertical-align: middle;
+    transition: var(--transition-default);
+    user-select: none;
+    position: relative;
+    font-weight: 400;
+}
+
+.ticket-popup .ticket-popup_body .ticket-popup_3d .ticket-popup_buttons .ticket-popup_prices > .ticket-popup_prices--item.active {
+    color: var(--white);
+    background: var(--ticket-primary);
+    border-color: var(--ticket-primary);
+}
+
 .price-popup {
     display: flex;
     flex-direction: column;
@@ -4761,7 +4820,7 @@ a.card-service:hover {
     text-align: center;
     border-radius: 5px 5px 0 0;
     text-transform: uppercase;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 500;
 }
 
