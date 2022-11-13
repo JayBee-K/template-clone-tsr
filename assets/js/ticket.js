@@ -84,6 +84,31 @@
 				</span>`
 	}
 
+	let arrTime = [];
+
+	let initArrTime = function () {
+		if ($('.form-vietlott').length && $('.form-vietlott .handleDropdownTime').length) {
+			$('.form-vietlott').each(function () {
+				let elm_frm_id = $(this).attr('id'),
+					elm_frm_dropdownTime = $(this).find('.handleDropdownTime'),
+					elm_active = elm_frm_dropdownTime.find('.dropdown-list_item.active');
+
+				arrTime[elm_frm_id] = [];
+				elm_active.each(function () {
+					arrTime[elm_frm_id].push($(this).attr('data-time'));
+				});
+
+				elm_frm_dropdownTime.on('show.bs.dropdown', function () {
+					elm_frm_dropdownTime.find('.dropdown-list_item').removeClass('active');
+					arrTime[elm_frm_id].map(function (value) {
+						elm_frm_dropdownTime.find(`.dropdown-list_item[data-time="${value}"`).addClass('active');
+					})
+				});
+			});
+		}
+	}
+
+
 	let dropdownTime = function () {
 		// Xử lý dropdown chọn kỳ quay tham gia
 		if ($('.handleDropdownTime').length) {
@@ -102,15 +127,22 @@
 			});
 
 			$('.handleDropdownTime').on('click', '.handleDropdownClose', function () {
-				let elm_event = $(this), elm_dropdown = elm_event.closest('.handleDropdownTime'),
+				let elm_event = $(this),
+					elm_dropdown = elm_event.closest('.handleDropdownTime'),
 					elm_active = elm_dropdown.find('.dropdown-list_item.active'),
-					elm_item_preview = elm_dropdown.find('.dropdown-toggle span');
+					elm_item_preview = elm_dropdown.find('.dropdown-toggle span'),
+					elm_frm_id = elm_event.closest('form').attr('id');
 
 				if (elm_active.length === 1) {
 					elm_item_preview.text(elm_active.text());
 				} else {
 					elm_item_preview.text(`Đã chọn ${elm_active.length} kỳ`);
 				}
+
+				arrTime[elm_frm_id] = [];
+				elm_active.each(function () {
+					arrTime[elm_frm_id].push($(this).attr('data-time'));
+				});
 
 				handleFillTime(elm_dropdown);
 				handlePrice(elm_event);
@@ -447,7 +479,7 @@
 			if (!elm.hasClass("active")) {
 				if (arrNumbers[key].length < lengthBall) {
 					if (type === 'v-3d') {
-						if(elm.closest('.ticket-popup_numbers').find('.ticket-choose_number.active').length) {
+						if (elm.closest('.ticket-popup_numbers').find('.ticket-choose_number.active').length) {
 							return false;
 						}
 					}
@@ -615,6 +647,8 @@
 	}
 
 	$(function () {
+		initArrTime();
+
 		// Vietlott 6-55
 		handleRandomNumber($('#random-type_655'), 55);
 		handleCallTicketPopup($('#random-type_655'), $('#modalTicket-655'));
