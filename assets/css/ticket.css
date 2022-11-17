@@ -22,14 +22,6 @@
     cursor: not-allowed;
 }
 
-.btn.btn-sm_table {
-    font-size: 11px;
-    height: 21px;
-    line-height: 20px;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
 .btn.btn-small {
     height: 33px;
     line-height: 21px;
@@ -44,23 +36,6 @@
     padding-right: 12px;
 }
 
-.btn.btn-large {
-    height: 44px;
-    line-height: 32px;
-    font-size: 16px;
-    padding-left: 14px;
-    padding-right: 14px;
-}
-
-.btn-light {
-    border: 1px solid #e5e7eb;
-}
-
-.btn-outline-light {
-    border: 1px solid #e5e7eb;
-    color: #232323;
-}
-
 .btn-theme_primary {
     background-color: var(--primary-color);
     color: #ffffff;
@@ -69,60 +44,6 @@
 .btn-theme_primary:hover {
     background-color: var(--primary-hover);
     color: #ffffff;
-}
-
-.btn-theme_primaryDark {
-    background-color: var(--primary-hover);
-    color: #ffffff;
-}
-
-.btn-theme_primaryDark:hover {
-    background-color: var(--primary-color);
-    color: #ffffff;
-}
-
-.btn-theme_primaryLight {
-    background-color: var(--primary-color);
-    color: #ffffff;
-}
-
-.btn-theme_primaryLight:hover {
-    opacity: .9;
-    color: #ffffff;
-}
-
-.btn-theme_secondary {
-    background-color: #f0ad4e;
-    color: #ffffff;
-}
-
-.btn-theme_secondary:hover {
-    background-color: #ec971f;
-    color: #ffffff;
-}
-
-.btn-theme_secondaryDark {
-    background-color: #ec971f;
-    color: #ffffff;
-}
-
-.btn-theme_secondaryDark:hover {
-    background-color: #f0ad4e;
-    color: #ffffff;
-}
-
-.btn-theme_secondaryLight {
-    background-color: #f0ad4e;
-    color: #ffffff;
-}
-
-.btn-theme_secondaryLight:hover {
-    opacity: .9;
-    color: #ffffff;
-}
-
-.btn-vertical-top {
-    vertical-align: 2px;
 }
 
 .btn-theme_ticket {
