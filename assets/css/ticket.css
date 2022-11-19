@@ -278,7 +278,7 @@
 }
 
 .result-card.result-3dmax .card-body:before {
-    background: url('../images/vietloot/logo-3-max.jpg') center center/contain no-repeat;
+    background: url('../images/vietloot/logo-3-max.png') center center/contain no-repeat;
 }
 
 .random-card {
@@ -511,11 +511,11 @@
 }
 
 .random-card .card-body .random-footer .random-button {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .random-card .card-body .random-footer .random-button_submit {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .random-item {
@@ -915,6 +915,61 @@
     align-items: center;
     vertical-align: middle;
     user-select: none;
+}
+
+.vietlott-links {
+    margin-top: 15px;
+}
+
+.vietlott-links .vietlott-links_inner{
+    margin-top: 15px;
+    display: flex;
+    gap: 15px;
+}
+
+.vietlott-links .vietlott-links_item {
+    width: 25%;
+}
+
+.vietlott-links .vietlott-links_item > a {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    padding: 10px;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: rgb(0 0 0 / 6%) 0px 4px 20px;
+    border-radius: 0.25rem;
+    transition: .3s all ease;
+    font-size: 1.05em;
+    font-weight: 700;
+}
+
+.vietlott-links .vietlott-links_item > a > span {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.vietlott-links .vietlott-links_item > a > span:before {
+    display: block;
+    content: "";
+    padding-top: calc(3 / 4 * 100%);
+}
+
+.vietlott-links .vietlott-links_item > a > span > img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+}
+
+.vietlott-links .vietlott-links_item > a:hover {
+    color: var(--ticket-primary);
+    box-shadow: rgb(0 0 0 / 20%) 0px 4px 20px;
 }
 
 @media screen and (max-width: 1199px) {

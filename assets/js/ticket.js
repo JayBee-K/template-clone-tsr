@@ -68,6 +68,13 @@
 						arrNumbers = [];
 
 						elm_frm.find('.unit-price').html(0 + '&nbsp;<span>vnđ</span>');
+						let btnQuick = $(elm_frm.find('.random-event_quick'));
+						if (btnQuick.hasClass('active')) {
+							btnQuick.removeClass('active');
+							btnQuick.text('Chọn nhanh');
+						}
+
+						checkValidPopup($(`.modal-ticket[data-form="#${elm_frm_id}"]`), '', false)
 					} else {
 						console.log('Có lỗi xảy ra, vui lòng thử lại!');
 					}
@@ -89,8 +96,7 @@
 	let initArrTime = function () {
 		if ($('.form-vietlott').length && $('.form-vietlott .handleDropdownTime').length) {
 			$('.form-vietlott').each(function () {
-				let elm_frm_id = $(this).attr('id'),
-					elm_frm_dropdownTime = $(this).find('.handleDropdownTime'),
+				let elm_frm_id = $(this).attr('id'), elm_frm_dropdownTime = $(this).find('.handleDropdownTime'),
 					elm_active = elm_frm_dropdownTime.find('.dropdown-list_item.active');
 
 				arrTime[elm_frm_id] = [];
@@ -127,8 +133,7 @@
 			});
 
 			$('.handleDropdownTime').on('click', '.handleDropdownClose', function () {
-				let elm_event = $(this),
-					elm_dropdown = elm_event.closest('.handleDropdownTime'),
+				let elm_event = $(this), elm_dropdown = elm_event.closest('.handleDropdownTime'),
 					elm_active = elm_dropdown.find('.dropdown-list_item.active'),
 					elm_item_preview = elm_dropdown.find('.dropdown-toggle span'),
 					elm_frm_id = elm_event.closest('form').attr('id');
@@ -285,8 +290,7 @@
 		// Render số ra view và fill vào input
 		let elmBox = elm.closest('.random-box'), elmBox_key = elmBox.attr('data-key'),
 			childLength_elmBox = elmBox.find('.random-number'), elm_frm_type = elm.closest('form').attr('data-type'),
-			elmBox_list = elmBox.find('.random-list .random-number');
-
+			elm_frm_id = elm.closest('form').attr('id'), elmBox_list = elmBox.find('.random-list .random-number');
 		if (type === 1) {
 			if (elm_frm_type === 'v-3d') {
 				if (elmBox_list.length) {
@@ -295,9 +299,19 @@
 						let ticketValue = handleRandom3D();
 						arrTicket.push(ticketValue);
 					}
+
 					elmBox_list.each(function (i) {
 						$(this).find('span').text(arrTicket[i]);
 						$(this).find('.random-number_value').val(arrTicket[i]);
+					});
+
+					$(`.modal-ticket[data-form="#${elm_frm_id}"] .ticket-popup[data-key=${elmBox_key}] .ticket-popup_numbers`).each(function (i) {
+						let ticketNumber = $(this).find('.ticket-choose_number');
+						ticketNumber.each(function () {
+							if ($(this).text() == arrTicket[i]) {
+								$(this).addClass('active');
+							}
+						})
 					});
 
 					arrNumbers[elmBox_key] = arrTicket;
@@ -310,7 +324,6 @@
 				}
 			} else {
 				let arrTicket = handleRandom(childLength_elmBox.length, max_rangeNumber);
-
 				// Render ra view
 				for (let i = 0; i < childLength_elmBox.length; i++) {
 					$(childLength_elmBox[i]).find('.random-number_preview').text(arrTicket[i]);
@@ -323,6 +336,8 @@
 
 				arrNumbers[elmBox_key] = arrTicket;
 			}
+
+			checkValidPopup($(`.modal-ticket[data-form="#${elm_frm_id}"]`), elmBox_key, true);
 		} else {
 			if (!isModal) {
 				elmBox.find('.random-number_preview').text('');
@@ -330,6 +345,13 @@
 			}
 
 			arrNumbers[elmBox_key] = [];
+			let btnQuick = $(elmBox.closest('form').find('.random-event_quick'));
+			if (btnQuick.hasClass('active')) {
+				btnQuick.removeClass('active');
+				btnQuick.text('Chọn nhanh');
+			}
+
+			checkValidPopup($(`.modal-ticket[data-form="#${elm_frm_id}"]`), elmBox_key, false);
 		}
 		if (!isModal) {
 			elm.toggleClass('active');
@@ -344,11 +366,30 @@
 		if (elm.length) {
 			elm.on('click', '.random-event', function () {
 				handleRenderRandom($(this), max_rangeNumber, false, (!$(this).hasClass('active') ? 1 : 0));
+
+				let btnQuick = $(elm.find('.random-event_quick')), getRowActive = $(elm.find('.random-event.active'));
+				if (btnQuick.hasClass('active') === false) {
+					if (getRowActive.length === 6) {
+						btnQuick.addClass('active');
+						btnQuick.text('Hủy');
+					}
+				}
 			});
 
-			elm.on('click', '.random-event_quick', function () {
-				let getRowNoActiveFirst = $(elm.find('.random-event:not(.active)').get(0));
-				getRowNoActiveFirst.trigger('click');
+			elm.on('click', '.random-event_quick', function (e) {
+				let btnQuick = $(elm.find('.random-event_quick')), randomEvent = $(elm.find('.random-event')),
+					getRowNoActive = $(elm.find('.random-event:not(.active)'));
+				if (btnQuick.hasClass('active') === false) {
+					if (getRowNoActive.length > 0) {
+						$(`.modal-ticket[data-form="#${btnQuick.closest('form').attr('id')}"] .ticket-popup:not(.is-valid) .ticket-random`).trigger('click');
+					}
+					btnQuick.addClass('active');
+					btnQuick.text('Hủy');
+				} else {
+					randomEvent.trigger('click');
+					btnQuick.removeClass('active');
+					btnQuick.text('Chọn nhanh');
+				}
 			});
 		}
 	}
@@ -372,7 +413,7 @@
 
 	let handleCallTicketPopup = function (elm, elmModal) {
 		// Gọi modal Ticket
-		elm.on('click', '.random-number', function () {
+		elm.on('click', '.random-number', function (event) {
 			let elm_event = $(this), elm_box = elm_event.closest('.random-box'), idx_box = elm_box.attr('data-index'),
 				key_box = elm_box.attr('data-key'), flag_active = false,
 				elm_frm_type = $($(elmModal).attr('data-form')).attr('data-type');
@@ -408,13 +449,15 @@
 			} else {
 				checkValidPopup(elmModal, key_box, false);
 			}
-
-			elmTicketSlider.slideTo(idx_box);
 			handlePrice(elm_event);
-			elmModal.modal('show');
+
+			if (typeof (event.isTrigger) === 'undefined') {
+				elmTicketSlider.slideTo(idx_box);
+				elmModal.modal('show');
+			}
 		});
 	}
-
+	let isFirst = false;
 	let handleRandomTicketPopup = function () {
 		// Random ngẫu nhiên trên modal
 		$(document).on('click', '.ticket-random', function () {
@@ -423,12 +466,19 @@
 				max_rangeNumber = $(this).closest('.modal-ticket').attr('data-ball');
 
 			handleRenderRandom($(frm).find(`.random-box[data-key=${key}]`).find('.random-event'), max_rangeNumber, true);
+			let btnQuick = $($(frm).find('.random-event_quick')), getRowActive = $($(frm).find('.random-event.active'));
+			if (btnQuick.hasClass('active') === false) {
+				if (getRowActive.length === 6 && isFirst === false) {
+					isFirst = true;
+					btnQuick.addClass('active');
+					btnQuick.text('Hủy');
+				}
+			}
 		});
 	}
 
 	let handleOnlyBall = function (arrNumbers, key, frm) {
-		let elm_frm_type = $(frm).attr('data-type'),
-			elmBox_list = $(frm).find('.random-list .random-number');
+		let elm_frm_type = $(frm).attr('data-type'), elmBox_list = $(frm).find('.random-list .random-number');
 
 		if (elm_frm_type === 'v-3d') {
 			if (elmBox_list.length) {
@@ -468,8 +518,7 @@
 		$(document).on('click', '.ticket-choose_number', function () {
 			let elm = $(this),
 				key = elm.closest('.ticket-popup').find('.ticket-popup_header > .ticket-popup_seri').text().toLowerCase().trim(),
-				frm = elm.closest('.modal-ticket').attr('data-form'),
-				type = $(frm).attr('data-type'),
+				frm = elm.closest('.modal-ticket').attr('data-form'), type = $(frm).attr('data-type'),
 				lengthBall = elm.closest('.modal-ticket').attr('data-length');
 
 			if (!arrNumbers.hasOwnProperty(key)) {
@@ -551,7 +600,10 @@
 	}
 
 	let checkValidPopup = function (elm, key = '', isValid = true) {
-		let ticketPopup = elm.find(`.ticket-popup[data-key="${key}"]`);
+		let ticketPopup = elm.find(`.ticket-popup`);
+		if (key != '') {
+			ticketPopup = elm.find(`.ticket-popup[data-key="${key}"]`);
+		}
 		// Kiểm tra hợp lệ của modal
 		if (isValid === true) {
 			ticketPopup.addClass("is-valid");
