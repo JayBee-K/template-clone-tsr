@@ -281,6 +281,14 @@
     background: url('../images/vietloot/logo-3-max.png') center center/contain no-repeat;
 }
 
+.result-card.result-3dpro .card-header {
+    background: url('../images/vietloot/bg-3-pro.jpg') center center/cover no-repeat;
+}
+
+.result-card.result-3dpro .card-body:before {
+    background: url('../images/vietloot/logo-3-pro.png') center center/contain no-repeat;
+}
+
 .random-card {
     border: 0;
     position: relative;
@@ -519,7 +527,7 @@
 }
 
 .random-item {
-    gap: 25px;
+    gap: 30px;
 }
 
 .random-item + .random-item {
@@ -921,7 +929,7 @@
     margin-top: 15px;
 }
 
-.vietlott-links .vietlott-links_inner{
+.vietlott-links .vietlott-links_inner {
     margin-top: 15px;
     display: flex;
     gap: 15px;
@@ -970,6 +978,12 @@
 .vietlott-links .vietlott-links_item > a:hover {
     color: var(--ticket-primary);
     box-shadow: rgb(0 0 0 / 20%) 0px 4px 20px;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .random-item {
+        gap: 25px !important;
+    }
 }
 
 @media screen and (max-width: 1199px) {

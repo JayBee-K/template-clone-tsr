@@ -208,6 +208,12 @@
 					unit_price += parseInt($(this).parent().find('.random-price_event').attr('data-value'));
 				})
 				return_price = (unit_price * number_time).toString();
+			} else if (elm_frm_type === 'v-3d-pro') {
+				let unit_price = 0;
+				elm_frm.find('.random-event.active').each(function () {
+					unit_price += parseInt($(this).parent().find('.random-price_event').attr('data-value'));
+				})
+				return_price = (unit_price * number_time).toString();
 			}
 		} else {
 			console.log('Có lỗi xảy ra, vui lòng thử lại!');
@@ -296,6 +302,36 @@
 				if (elmBox_list.length) {
 					let arrTicket = [];
 					for (let i = 0; i < 3; i++) {
+						let ticketValue = handleRandom3D();
+						arrTicket.push(ticketValue);
+					}
+
+					elmBox_list.each(function (i) {
+						$(this).find('span').text(arrTicket[i]);
+						$(this).find('.random-number_value').val(arrTicket[i]);
+					});
+
+					$(`.modal-ticket[data-form="#${elm_frm_id}"] .ticket-popup[data-key=${elmBox_key}] .ticket-popup_numbers`).each(function (i) {
+						let ticketNumber = $(this).find('.ticket-choose_number');
+						ticketNumber.each(function () {
+							if ($(this).text() == arrTicket[i]) {
+								$(this).addClass('active');
+							}
+						})
+					});
+
+					arrNumbers[elmBox_key] = arrTicket;
+
+					if (isModal) {
+						$(childLength_elmBox[0]).trigger('click');
+					}
+				} else {
+					return false;
+				}
+			} else if (elm_frm_type === 'v-3d-pro') {
+				if (elmBox_list.length) {
+					let arrTicket = [];
+					for (let i = 0; i < 6; i++) {
 						let ticketValue = handleRandom3D();
 						arrTicket.push(ticketValue);
 					}
@@ -430,6 +466,13 @@
 					let price_value = elm_box.find('.random-price_event').attr('data-value');
 					$(elmModal.find('.swiper-slide')[idx_box]).find(`.ticket-popup_buttons > .ticket-popup_prices > .ticket-popup_prices--item`).removeClass('active');
 					$(elmModal.find('.swiper-slide')[idx_box]).find(`.ticket-popup_buttons > .ticket-popup_prices > .ticket-popup_prices--item[data-value="${price_value}"]`).addClass('active');
+				} else if (elm_frm_type === 'v-3d-pro') {
+					let ticket_popup_item = $(elmModal.find('.swiper-slide')[idx_box]).find('.ticket-popup_numbers--list .ticket-popup_numbers')[index];
+					itemLoop = $(ticket_popup_item).find('span');
+
+					let price_value = elm_box.find('.random-price_event').attr('data-value');
+					$(elmModal.find('.swiper-slide')[idx_box]).find(`.ticket-popup_buttons > .ticket-popup_prices > .ticket-popup_prices--item`).removeClass('active');
+					$(elmModal.find('.swiper-slide')[idx_box]).find(`.ticket-popup_buttons > .ticket-popup_prices > .ticket-popup_prices--item[data-value="${price_value}"]`).addClass('active');
 				}
 
 				itemLoop.each(function () {
@@ -494,6 +537,20 @@
 			} else {
 				return false;
 			}
+		} else if (elm_frm_type === 'v-3d-pro') {
+			if (elmBox_list.length) {
+				let ticket_numbers = $(`.modal-ticket[data-form="${frm}"] .ticket-popup[data-key="${key}"] .ticket-popup_numbers`);
+				ticket_numbers.each(function (i) {
+					if ($(this).find('.ticket-choose_number.active').length) {
+						let valueBall = $(this).find('.ticket-choose_number.active').text();
+						let childLength_elmBox = $(frm).find(`.random-box[data-key="${key}"]`).find('.random-number');
+						$(childLength_elmBox[i]).find('.random-number_preview').text(valueBall);
+						$(childLength_elmBox[i]).find('.random-number_value').val(valueBall);
+					}
+				});
+			} else {
+				return false;
+			}
 		} else {
 			// X lý các số được chọn và show ra view - fill vào input
 			arrNumbers[key].sort(function (a, b) {
@@ -527,7 +584,7 @@
 
 			if (!elm.hasClass("active")) {
 				if (arrNumbers[key].length < lengthBall) {
-					if (type === 'v-3d') {
+					if (type === 'v-3d' || type === 'v-3d-pro') {
 						if (elm.closest('.ticket-popup_numbers').find('.ticket-choose_number.active').length) {
 							return false;
 						}
@@ -538,7 +595,7 @@
 					return false;
 				}
 			} else {
-				if (type === 'v-3d') {
+				if (type === 'v-3d' || type === 'v-3d-pro') {
 					elm.removeClass('active');
 					arrNumbers[key] = [];
 					elm.closest('.ticket-popup_numbers--list').find('.ticket-popup_numbers').each(function (i) {
@@ -716,6 +773,13 @@
 		handleRandomNumber($('#random-type_3dmax'), 10);
 		handleCallTicketPopup($('#random-type_3dmax'), $('#modalTicket-3dmax'));
 		handleSubmitTicket($('#random-type_3dmax'));
+
+
+		// Vietlott 3D Pro
+		handleCallPopupPrice($('#random-type_3dpro'));
+		handleRandomNumber($('#random-type_3dpro'), 10);
+		handleCallTicketPopup($('#random-type_3dpro'), $('#modalTicket-3dpro'));
+		handleSubmitTicket($('#random-type_3dpro'));
 
 		// Dùng chung
 		handleRandomTicketPopup();
