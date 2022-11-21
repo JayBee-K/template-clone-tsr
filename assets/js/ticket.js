@@ -46,8 +46,10 @@
 					elm_event.addClass('active');
 					elm_item_preview.text(elm_event.text());
 
-					let elm_frm = elm_event.closest('form'), elm_frm_id = elm_frm.attr('id'),
-						elm_frm__box = elm_frm.find('.random-box'), elm_ball = parseInt(elm_event.attr('data-ball'));
+					let elm_frm = elm_event.closest('form'),
+						elm_frm_id = elm_frm.attr('id'),
+						elm_frm__box = elm_frm.find('.random-box'),
+						elm_ball = parseInt(elm_event.attr('data-ball'));
 					if (!elm_ball.isNaN) {
 						// Reset active bóng trong modal và set số bóng cần phải chọn trong mỗi vé modal
 						$(`.modal-ticket[data-form="#${elm_frm_id}"]`).attr('data-length', elm_ball);
@@ -256,7 +258,7 @@
 
 		// Bỏ vào mảng Ticket số n phần tử (n: loại vé (thường, bao 5,...))
 		for (let i = 0; i < length; i++) {
-			arrTicket.push(arrNumbersTemp[i].number)
+			arrTicket.push(((arrNumbersTemp[i].number < 10) ? '0' : '') + arrNumbersTemp[i].number)
 		}
 
 		// Sắp xếp lại mảng theo giá trị số từ nhỏ đến lớn
@@ -364,12 +366,20 @@
 				for (let i = 0; i < childLength_elmBox.length; i++) {
 					$(childLength_elmBox[i]).find('.random-number_preview').text(arrTicket[i]);
 					$(childLength_elmBox[i]).find('.random-number_value').val(arrTicket[i]);
+
+					$(`.modal-ticket[data-form="#${elm_frm_id}"] .ticket-popup[data-key=${elmBox_key}] .ticket-popup_numbers`).each(function () {
+						let ticketNumber = $(this).find('.ticket-choose_number');
+						ticketNumber.each(function () {
+							if ($(this).text() === arrTicket[i]) {
+								$(this).addClass('active');
+							}
+						})
+					});
 				}
 
 				if (isModal) {
 					$(childLength_elmBox[0]).trigger('click');
 				}
-
 				arrNumbers[elmBox_key] = arrTicket;
 			}
 
@@ -386,6 +396,15 @@
 				btnQuick.removeClass('active');
 				btnQuick.text('Chọn nhanh');
 			}
+
+			$(`.modal-ticket[data-form="#${elm_frm_id}"] .ticket-popup[data-key=${elmBox_key}] .ticket-popup_numbers`).each(function (i) {
+				let ticketNumber = $(this).find('.ticket-choose_number');
+				ticketNumber.each(function () {
+					if ($(this).hasClass('active')) {
+						$(this).removeClass('active');
+					}
+				})
+			});
 
 			checkValidPopup($(`.modal-ticket[data-form="#${elm_frm_id}"]`), elmBox_key, false);
 		}
@@ -589,7 +608,7 @@
 							return false;
 						}
 					}
-					arrNumbers[key].push(parseInt(elm.text()));
+					arrNumbers[key].push(elm.text());
 					elm.addClass('active');
 				} else {
 					return false;
@@ -600,7 +619,7 @@
 					arrNumbers[key] = [];
 					elm.closest('.ticket-popup_numbers--list').find('.ticket-popup_numbers').each(function (i) {
 						if ($(this).find('.ticket-choose_number.active').length) {
-							arrNumbers[key].push(parseInt($(this).find('.ticket-choose_number.active').text()));
+							arrNumbers[key].push($(this).find('.ticket-choose_number.active').text());
 						}
 					});
 
@@ -610,7 +629,8 @@
 					$(listRandomBox[index]).find('.random-number_value').val('');
 
 				} else {
-					arrNumbers[key] = arrNumbers[key].filter(item => item !== parseInt(elm.text()))
+					arrNumbers[key] = arrNumbers[key].filter(item => item !== elm.text());
+					console.log(arrNumbers);
 					elm.removeClass('active');
 				}
 			}
