@@ -4049,7 +4049,7 @@ a.card-service:hover {
 }
 
 .sidebar-card .card-header {
-	padding: 6px 15px 5px;
+	padding: 6px 45px 5px 15px;
 	border: 0;
 	border-radius: 0;
 	background: white;
@@ -4059,21 +4059,29 @@ a.card-service:hover {
 	background: url(../images/sidebar-bg.jpg) center center/cover no-repeat;
 	text-transform: uppercase;
 	letter-spacing: 0.3px;
-	text-align: center;
+	position: relative;
+	cursor: pointer;
 }
 
-.sidebar-card .card-header {
-	padding: 6px 15px 5px;
-	border: 0;
-	border-radius: 0;
-	background: white;
-	color: #fff;
-	font-weight: 500;
-	font-size: 1.1em;
-	background: url(../images/sidebar-bg.jpg) center center/cover no-repeat;
-	text-transform: uppercase;
-	letter-spacing: 0.3px;
-	text-align: center;
+.sidebar-card .card-header:after {
+	position: absolute;
+	top: 7px;
+	right: 10px;
+	content: "\f107";
+	font-family: "Font Awesome 5 Pro";
+	width: 20px;
+	height: 20px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.15em;
+	line-height: 1;
+	vertical-align: middle;
+	transition: .3s all ease-in-out;
+}
+
+.sidebar-card .card-header[aria-expanded=false]:after {
+	transform: rotate(180deg);
 }
 
 .sidebar-card .card-body .sidebar-list {
@@ -4081,7 +4089,7 @@ a.card-service:hover {
 	flex-direction: column;
 }
 
-.sidebar-card .card-body .sidebar-list > a {
+.sidebar-card .card-body .sidebar-list > .sidebar-list_item {
 	padding: 10px 15px;
 	color: #111111;
 	font-size: 1.05em;
@@ -4089,13 +4097,13 @@ a.card-service:hover {
 	transition: .3s all ease-in-out;
 }
 
-.sidebar-card .card-body .sidebar-list > a:hover {
+.sidebar-card .card-body .sidebar-list > .sidebar-list_item:hover {
 	background-color: #f2f2f2;
 	color: var(--primary-color);
 }
 
 
-.sidebar-card .card-body .sidebar-list > a + a {
+.sidebar-card .card-body .sidebar-list > .sidebar-list_item + .sidebar-list_item {
 	border-top: 1px solid #e5e7eb;
 }
 
