@@ -4102,9 +4102,44 @@ a.card-service:hover {
 	color: var(--primary-color);
 }
 
-
 .sidebar-card .card-body .sidebar-list > .sidebar-list_item + .sidebar-list_item {
 	border-top: 1px solid #e5e7eb;
+}
+
+.sidebar-card .card-body .sidebar-list > .sidebar-list_item .sidebar-range .range-result {
+	padding-top: 15px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	justify-content: space-between;
+	color: #212529;
+	font-size: 1em;
+}
+
+.sidebar-card .card-body .sidebar-list > .sidebar-list_item .sidebar-range .range-slide {
+	margin-top: 15px;
+	padding: 0 8px;
+}
+
+.sidebar-card .card-body .sidebar-list > .sidebar-list_item .sidebar-range .range-slide .ui-slider {
+	border: 0;
+	background: #F1F5F9;
+}
+
+.sidebar-card .card-body .sidebar-list > .sidebar-list_item .sidebar-range .range-slide .ui-slider .ui-slider-range {
+	background: var(--primary-color);
+}
+
+.sidebar-card .card-body .sidebar-list > .sidebar-list_item .sidebar-range .range-slide .ui-slider .ui-slider-handle {
+	border-radius: 50%;
+	background: #fff;
+	-webkit-box-shadow: 0px 2px 4px rgba(97,97,97,0.18),0px 4px 8px rgba(97,97,97,0.18);
+	box-shadow: 0px 2px 4px rgba(97,97,97,0.18),0px 4px 8px rgba(97,97,97,0.18);
+	border: 0;
+	outline: none;
 }
 
 /* End Sim */
