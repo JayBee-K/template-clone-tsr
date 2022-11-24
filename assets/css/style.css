@@ -4097,7 +4097,7 @@ a.card-service:hover {
 	transition: .3s all ease-in-out;
 }
 
-.sidebar-card .card-body .sidebar-list > .sidebar-list_item:hover {
+.sidebar-card .card-body .sidebar-list > .sidebar-list_item:not(.sidebar-list_range):hover {
 	background-color: #f2f2f2;
 	color: var(--primary-color);
 }
@@ -4126,7 +4126,7 @@ a.card-service:hover {
 
 .sidebar-card .card-body .sidebar-list > .sidebar-list_item .sidebar-range .range-slide .ui-slider {
 	border: 0;
-	background: #F1F5F9;
+	background: #e9e9ea;
 }
 
 .sidebar-card .card-body .sidebar-list > .sidebar-list_item .sidebar-range .range-slide .ui-slider .ui-slider-range {
@@ -4136,10 +4136,27 @@ a.card-service:hover {
 .sidebar-card .card-body .sidebar-list > .sidebar-list_item .sidebar-range .range-slide .ui-slider .ui-slider-handle {
 	border-radius: 50%;
 	background: #fff;
-	-webkit-box-shadow: 0px 2px 4px rgba(97,97,97,0.18),0px 4px 8px rgba(97,97,97,0.18);
-	box-shadow: 0px 2px 4px rgba(97,97,97,0.18),0px 4px 8px rgba(97,97,97,0.18);
+	-webkit-box-shadow: 0px 2px 4px rgba(97, 97, 97, 0.18), 0px 4px 8px rgba(97, 97, 97, 0.18);
+	box-shadow: 0px 2px 4px rgba(97, 97, 97, 0.18), 0px 4px 8px rgba(97, 97, 97, 0.18);
 	border: 0;
 	outline: none;
+}
+
+.sim-heading .title {
+	display: flex;
+	align-items: center;
+}
+
+.sim-heading .title .icon {
+	margin-top: -4px;
+	margin-right: 8px;
+	display: flex;
+	align-items: center;
+	vertical-align: middle;
+}
+
+.sim-heading .title .icon img {
+	height: 30px;
 }
 
 /* End Sim */
