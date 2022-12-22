@@ -4160,3 +4160,7 @@ a.card-service:hover {
 }
 
 /* End Sim */
+
+#table-rowspan.table-module tr:nth-child(even) {
+	background-color: #fff;
+}
