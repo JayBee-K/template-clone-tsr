@@ -4030,3 +4030,58 @@ a.card-service:hover {
 #table-rowspan.table-module tr:nth-child(even) {
 	background-color: #fff;
 }
+
+.nick-banner {
+	padding: 15px 0;
+}
+
+.nick-banner .swiper-pagination {
+	bottom: 15px;
+}
+
+.nick-banner .swiper-pagination .swiper-pagination-bullet {
+	border-radius: 0;
+	width: 18px;
+	height: 5px;
+	background: #fefefe;
+	opacity: .7;
+}
+
+.nick-banner .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	opacity: 1;
+	background: var(--primary-color);
+}
+
+.nick-banner .nick-banner_slider--item {
+	border-radius: 8px;
+	overflow: hidden;
+	position: relative;
+}
+
+.nick-banner_images {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.nick-banner_images .nick-banner_slider--item {
+	border-radius: 8px;
+	overflow: hidden;
+	position: relative;
+}
+
+.nick-banner_images .nick-banner_slider--item:before {
+	display: block;
+	content: "";
+	width: 100%;
+	padding-top: calc(var(--padding-top) - 10px);
+}
+
+.nick-banner_images .nick-banner_slider--item > img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

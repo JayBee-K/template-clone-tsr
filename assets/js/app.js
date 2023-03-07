@@ -216,6 +216,29 @@
 		}
 	}
 
+	let initSlideBannerNick = function () {
+		if ($('#nick-banner').length > 0) {
+			new Swiper('#nick-banner .swiper', {
+				loop: false,
+				speed: 250,
+				autoplay: {
+					delay: 10000,
+					disableOnInteraction: false,
+				},
+				pagination: {
+					el: "#nick-banner .swiper-pagination",
+					clickable: true,
+				}
+			});
+		}
+	}
+
+	let handleHeightImageBannerNick = function () {
+		if ($('#nick-banner').length && $('.nick-banner_js').length) {
+			$('.nick-banner_js').css('--padding-top', $('#nick-banner').height() / 2 + 'px')
+		}
+	}
+
 	$(function () {
 		initFromModule1();
 		initFormFloating();
@@ -236,6 +259,12 @@
 		$('.updateInformation').click(function () {
 			initUpdateInformation($(this).data('form'));
 		});
+
+		/****
+		 * Scripts Shop Nick
+		 */
+		initSlideBannerNick();
+		handleHeightImageBannerNick();
 
 		/****
 		 * Scripts Vé
@@ -311,7 +340,9 @@
 			},
 		};
 
-		let dateDeparture = $("#date-departure").flatpickr(departureFlatpickrConfig);
+		if ($("#date-departure").length) {
+			let dateDeparture = $("#date-departure").flatpickr(departureFlatpickrConfig);
+		}
 
 		let htmlRender = '';
 		let dateReturn = '';
