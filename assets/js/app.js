@@ -216,6 +216,41 @@
 			}
 		}
 
+
+		const handleStickyHeader = () => {
+			const header = $('#header-m2');
+			const headerPosition = header.offset().top;
+			$(window).scroll(function () {
+				const scrollValue = $(window).scrollTop();
+				if (scrollValue > headerPosition) {
+					header.addClass('is-sticky');
+				} else {
+					header.removeClass('is-sticky');
+				}
+			});
+		}
+
+		let initSlideHeader = function () {
+			if ($('#header-slider').length > 0) {
+				new Swiper('#header-slider .swiper', {
+					loop: true,
+					effect: 'fade',
+					fadeEffect: {
+						crossFade: true
+					},
+					speed: 250,
+					autoplay: {
+						delay: 5000,
+						disableOnInteraction: false,
+					},
+					navigation: {
+						nextEl: '#header-slider .header-button-next',
+						prevEl: '#header-slider .header-button-prev',
+					},
+				});
+			}
+		}
+
 		let initSlideBannerNick = function () {
 			if ($('#nick-banner').length > 0) {
 				new Swiper('#nick-banner .swiper', {
@@ -269,6 +304,8 @@
 			/****
 			 * Scripts Shop Nick
 			 */
+			handleStickyHeader();
+			initSlideHeader();
 			initSlideBannerNick();
 			handleHeightImageBannerNick();
 
