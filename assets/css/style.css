@@ -4031,8 +4031,132 @@ a.card-service:hover {
 	background-color: #fff;
 }
 
+.nick-tab {
+	-webkit-box-shadow: 1rem 1rem 3rem rgb(0 0 0 / 16%);
+	box-shadow: 1rem 1rem 3rem rgb(0 0 0 / 16%);
+	border: 1px solid var(--gray-200);
+	border-radius: 4px;
+	height: 100%;
+}
+
+.nick-tab .tabs-m1 .nav-tabs {
+	flex-wrap: nowrap;
+	padding: 15px;
+}
+
+.nick-tab .tabs-m1 .nav-tabs .nav-item {
+	width: 50%;
+}
+
+.nick-tab .tabs-m1 .nav-tabs .nav-item .nav-link {
+	font-weight: 700;
+	font-size: 1.1em;
+}
+
+.nick-tab .tabs-m1 .nav-tabs .nav-item .nav-link.active {
+	width: 100%;
+}
+
+.nick-tab .form-m1 {
+	padding: 15px;
+	border-top: 1px solid var(--gray-200);
+}
+
+.nick-top {
+	padding: 15px;
+	border-top: 1px solid var(--gray-200);
+	display: flex;
+	flex-direction: column;
+	gap: 11.5px;
+	overflow-y: auto;
+	max-height: var(--max-height);
+}
+
+.nick-top::-webkit-scrollbar {
+	width: 6px;
+	background: #dedede;
+}
+
+.nick-top::-webkit-scrollbar-track {
+	border-left: .5px solid #dedede;
+	border-top: .5px solid #dedede;
+	border-bottom: .5px solid #dedede
+}
+
+.nick-top::-webkit-scrollbar-thumb {
+	background: #b4b4b4;
+	border-radius: 4px;
+}
+
+.nick-top .nick-top_item {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 10px;
+}
+
+.nick-top .nick-top_item .nick-top_item--icon {
+	position: relative;
+	color: var(--white);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.nick-top .nick-top_item .nick-top_item--icon > i {
+	text-align: center;
+	font-size: 28px;
+	color: var(--primary-color);
+}
+
+.nick-top .nick-top_item .nick-top_item--icon.nick-top_item--first > i {
+	color: #fedf37;
+}
+
+.nick-top .nick-top_item .nick-top_item--icon.nick-top_item--second > i {
+	color: #ff0000;
+}
+
+.nick-top .nick-top_item .nick-top_item--icon.nick-top_item--third > i {
+	color: #1c7430;
+}
+
+.nick-top .nick-top_item .nick-top_item--icon > span {
+	font-size: 13px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-weight: 700;
+}
+
+.nick-top .nick-top_item .nick-top_item--content {
+	font-weight: 700;
+	color: var(--gray-800);
+	font-size: 1.1em;
+	flex-shrink: 1;
+}
+
+.nick-top .nick-top_item .nick-top_item--price {
+	margin-left: auto;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--white);
+	background: #dc3545;
+	font-size: 1em;
+	font-weight: 500;
+	padding: 4px 12px;
+	min-width: 100px;
+}
+
 .nick-banner {
 	padding: 15px 0;
+}
+
+.nick-banner .nick-banner_slider {
+	position: relative;
 }
 
 .nick-banner .swiper-pagination {
@@ -4087,7 +4211,7 @@ a.card-service:hover {
 }
 
 .nick-card {
-	border-radius: 4px 4px;
+	border-radius: 4px;
 	overflow: hidden;
 	-webkit-box-shadow: 1rem 1rem 3rem rgb(0 0 0 / 16%);
 	box-shadow: 1rem 1rem 3rem rgb(0 0 0 / 16%);
@@ -4236,4 +4360,26 @@ a.card-service:hover {
 
 .nick-marquee > i {
 	font-size: 18px;
+}
+
+.nick-price {
+	padding: 30px 0;
+	background: #f3f3f3;
+}
+
+.nick-price .card-price {
+	background: var(--white);
+	box-shadow: none;
+	transition: var(--transition-default);
+	font-size: 17px;
+}
+
+.nick-price .card-price:hover {
+	color: var(--white);
+	background: var(--primary-color);
+	border-color: var(--primary-color);
+}
+
+.nick-price .card-price:hover svg {
+	opacity: 1;
 }
