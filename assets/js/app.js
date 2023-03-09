@@ -279,7 +279,45 @@
 				}
 			}
 		}
+		let initReOrderHeader2 = function () {
+			if (windowWidth > 1024) {
+				let elmHeader = $('#header-m2'),
+					widthContainer = parseInt(elmHeader.children('.header-bottom').children('.container').width()),
+					widthNavigation = parseInt(elmHeader.children('.header-bottom').children('.container').find('.header-navigation').width()),
+					widthLogo = parseInt(elmHeader.children('.header-bottom').children('.container').find('.header-logo').width()),
+					widthUser = parseInt(elmHeader.children('.header-bottom').children('.container').find('.header-users').width()),
+					widthRatio = (widthNavigation - widthLogo - widthUser) / widthContainer;
+				if (widthRatio > 0.5) {
+					elmHeader.addClass('header-sort');
+				}
+			}
+		}
+		let initHeaderMobile2 = function () {
+			if ($("#header-m2 .header-navigation > ul > li > ul").length) {
+				$("#header-m2 .header-navigation").attr('id', 'hasMenu');
+				$("#header-m2 .header-navigation > ul > li > ul").each(function (index) {
+					$(this).prev().attr({
+						"href": "#subMenu_" + index,
+						"data-toggle": "collapse"
+					});
 
+					$(this).attr({
+						"id": "subMenu_" + index,
+						"class": "collapse list-unstyled mb-0 ",
+						"data-parent": "#hasMenu"
+					});
+				});
+			}
+
+			$('#call-navigation_m2').click(function () {
+				$('body').addClass('is-navigation');
+			})
+
+			$('#header-overlay_m2').click(function () {
+				$("#header-m2 .header-navigation > ul > li > ul").collapse('hide');
+				$('body').removeClass('is-navigation');
+			});
+		}
 		$(function () {
 			initFromModule1();
 			initFormFloating();
@@ -308,6 +346,8 @@
 			initSlideHeader();
 			initSlideBannerNick();
 			handleHeightImageBannerNick();
+			initReOrderHeader2();
+			initHeaderMobile2();
 
 			/****
 			 * Scripts Vé

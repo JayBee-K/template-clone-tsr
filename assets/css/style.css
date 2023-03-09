@@ -402,6 +402,12 @@ h6, .h6 {
 	margin: 20px 0;
 }
 
+@media screen and (max-width: 991px) {
+	.section-gap_mbno {
+		margin-top: 0;
+	}
+}
+
 /***** Custom Title *****/
 .title {
 	font-size: 22px;
@@ -4193,7 +4199,7 @@ CSS Nick
 	border-top: 1px solid rgba(0, 0, 0, .05);
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
 	.header-m2 .header-bottom .header-navigation > ul > li > ul {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -4419,6 +4425,181 @@ CSS Nick
 	visibility: visible;
 }
 
+.header-m2.header-sort .header-logo {
+	order: 1;
+}
+
+.header-m2.header-sort .header-navigation {
+	order: 3;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.header-m2.header-sort .header-users {
+	order: 2;
+	margin-left: auto;
+	padding-top: 15px;
+	padding-bottom: 5px;
+}
+
+.header-m2 .header-hamburger {
+	display: none;
+}
+
+@media screen and (max-width: 1024px) {
+	.header-m2 .header-top {
+		display: none;
+	}
+
+	.header-m2 .header-bottom .header-navigation {
+		display: block;
+		position: fixed;
+		top: 0;
+		right: -240px;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		height: 100%;
+		width: 220px;
+		background: #fff;
+		box-shadow: 0 2px 3px rgb(0 0 0 / 20%);
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		z-index: 13;
+	}
+
+	.is-navigation .header-m2 .header-navigation {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		right: 0;
+	}
+
+	.header-m2 .header-bottom .header-navigation > ul {
+		flex-direction: column;
+	}
+
+	.header-m2 .header-bottom .header-navigation > ul > li {
+		width: 100%;
+	}
+
+	.header-m2 .header-bottom .header-navigation > ul > li > a {
+		padding: 8px 10px;
+		font-size: 14px;
+		color: var(--gray-900) !important;
+		text-transform: uppercase;
+		font-weight: 500;
+		border-bottom: 1px solid #eaeaea;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.header-m2 .header-bottom .header-navigation > ul > li > a[aria-expanded=true] i:before {
+		content: "\f068";
+	}
+
+	.header-m2 .header-bottom .header-navigation > ul > li.navigation-logo > a {
+		padding-top: 6.5px;
+		padding-bottom: 6.5px;
+		justify-content: center;
+	}
+
+	.header-m2 .header-bottom .header-navigation > ul > li > ul > li > a {
+		padding: 8px 20px;
+		background: #f5f5f5;
+	}
+
+	.header-m2 .header-bottom .header-navigation > ul > li > ul > li + li {
+		border-top: 1px solid var(--gray-200);
+	}
+
+	.header-m2 .header-overlay {
+		background: rgba(0, 0, 0, 0.3);
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 12;
+		display: none;
+	}
+
+	.is-navigation .header-m2 .header-overlay {
+		display: block;
+	}
+
+	.header-m2 .header-bottom .container {
+		justify-content: center;
+		padding-top: 7px;
+		padding-bottom: 7px;
+		position: relative;
+	}
+
+	.header-m2 .header-bottom .header-hamburger {
+		top: 50%;
+		right: 15px;
+		transform: translateY(-50%);
+		width: 30px;
+		height: 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		transition: var(--transition-default);
+	}
+
+	.header-m2 .header-bottom .header-hamburger:before, .header-m2 .header-bottom .header-hamburger:after, .header-m2 .header-bottom .header-hamburger > span {
+		display: block;
+		width: 20px;
+		height: 1px;
+		margin: 2.5px auto;
+		background-color: var(--white);
+		-webkit-transition: all 0.6s ease;
+		transition: all 0.6s ease;
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
+		opacity: 1;
+	}
+
+	.is-navigation .header-m2 .header-bottom .header-hamburger {
+		right: 220px
+	}
+
+	.is-navigation .header-m2 .header-bottom .header-hamburger > span {
+		-webkit-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		opacity: 0;
+	}
+
+	.is-navigation .header-m2 .header-bottom .header-hamburger:before {
+		-webkit-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		transform: rotate(45deg);
+		margin-top: 10px;
+	}
+
+	.is-navigation .header-m2 .header-bottom .header-hamburger:after {
+		-webkit-transform: rotate(-45deg);
+		-ms-transform: rotate(-45deg);
+		transform: rotate(-45deg);
+		margin-top: -10px;
+	}
+
+	.header-m2 .header-bottom .header-hamburger:before, .header-m2 .header-bottom .header-hamburger:after {
+		content: "";
+	}
+
+	.header-m2 .header-bottom .header-users {
+		display: none;
+	}
+
+}
+
 .nick-tab {
 	-webkit-box-shadow: 1rem 1rem 3rem rgb(0 0 0 / 16%);
 	box-shadow: 1rem 1rem 3rem rgb(0 0 0 / 16%);
@@ -4448,6 +4629,18 @@ CSS Nick
 .nick-tab .form-m1 {
 	padding: 15px;
 	border-top: 1px solid var(--gray-200);
+}
+
+@media screen and (max-width: 1025px) {
+	.nick-tab .tabs-m1 .nav-tabs .nav-item {
+		margin: 0 0 0 6px !important;
+	}
+
+	.nick-tab .tabs-m1 .nav-tabs .nav-item .nav-link {
+		width: 100%;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 .nick-top {
@@ -4551,6 +4744,12 @@ CSS Nick
 	bottom: 15px;
 }
 
+@media screen and (max-width: 991px) {
+	.nick-banner .swiper-pagination {
+		bottom: 10px;
+	}
+}
+
 .nick-banner .swiper-pagination .swiper-pagination-bullet {
 	border-radius: 0;
 	width: 18px;
@@ -4568,6 +4767,21 @@ CSS Nick
 	border-radius: 8px;
 	overflow: hidden;
 	position: relative;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+	.nick-banner .nick-banner_slider,
+	.nick-banner .nick-banner_slider .swiper,
+	.nick-banner .nick-banner_slider .swiper .swiper-wrapper,
+	.nick-banner .nick-banner_slider .swiper .swiper-wrapper .swiper-slide,
+	.nick-banner .nick-banner_slider .swiper .swiper-wrapper .swiper-slide .nick-banner_slider--item,
+	.nick-banner .nick-banner_slider .swiper .swiper-wrapper .swiper-slide .nick-banner_slider--item img {
+		height: 100% !important;
+	}
+
+	.nick-banner .nick-banner_slider .swiper .swiper-wrapper .swiper-slide .nick-banner_slider--item img {
+		object-fit: cover;
+	}
 }
 
 .nick-banner_images {
@@ -4666,6 +4880,7 @@ CSS Nick
 	box-shadow: none;
 	cursor: auto;
 	margin-top: 4px;
+	flex-wrap: wrap;
 	gap: 8px;
 }
 
