@@ -4465,7 +4465,7 @@ CSS Nick
 		box-shadow: 0 2px 3px rgb(0 0 0 / 20%);
 		-webkit-transition: all 0.3s ease;
 		transition: all 0.3s ease;
-		z-index: 13;
+		z-index: 23;
 	}
 
 	.is-navigation .header-m2 .header-navigation {
@@ -4526,7 +4526,8 @@ CSS Nick
 		display: none;
 	}
 
-	.is-navigation .header-m2 .header-overlay {
+	.is-navigation .header-m2 .header-overlay,
+	.is-users .header-m2 .header-overlay {
 		display: block;
 	}
 
@@ -4596,6 +4597,88 @@ CSS Nick
 
 	.header-m2 .header-bottom .header-users {
 		display: none;
+	}
+
+	.header-m2 .header-bottom .header-users_mobile {
+		position: relative;
+		margin-left: auto;
+		z-index: 22;
+		margin-right: 35px;
+	}
+
+	.header-m2 .header-bottom .header-users_mobile .header-users_btn {
+		border-radius: 40px;
+		color: var(--white);
+		background: rgba(255, 255, 255, .1);
+		padding: 5px 15px;
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		font-size: 0.95em;
+		transition: var(--transition-default);
+	}
+
+	.header-m2 .header-bottom .header-users_mobile > ul {
+		position: fixed;
+		top: 0;
+		right: -240px;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		width: 220px;
+		background: #fff;
+		box-shadow: 0 2px 3px rgb(0 0 0 / 20%);
+		-webkit-transition: all 0.3s ease;
+		transition: all 0.3s ease;
+		z-index: 13;
+		flex-direction: column;
+		display: flex;
+		align-items: center;
+		height: 100vh;
+	}
+
+	.is-users .header-m2 .header-bottom .header-users_mobile > ul {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		right: 0;
+	}
+
+	.header-m2 .header-bottom .header-users_mobile > ul > li {
+		width: 100%;
+		position: relative;
+	}
+
+	.header-m2 .header-bottom .header-users_mobile > ul > li > a {
+		padding: 8px 10px;
+		font-size: 14px;
+		color: var(--gray-900) !important;
+		text-transform: uppercase;
+		font-weight: 500;
+		border-bottom: 1px solid #eaeaea;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.header-m2 .header-bottom .header-users_mobile > ul > li.users-logo > a {
+		padding-top: 6.5px;
+		padding-bottom: 6.5px;
+		justify-content: center;
+	}
+
+	.header-m2 .header-bottom .header-users_mobile > ul > li.users-btn > a {
+		color: var(--white) !important;
+		background: var(--primary-color);
+		padding: 12px 15px;
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		font-size: 0.95em;
+		transition: var(--transition-default);
+		justify-content: flex-start;
+		border-radius: 0;
 	}
 
 }

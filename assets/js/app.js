@@ -315,7 +315,11 @@
 
 			$('#header-overlay_m2').click(function () {
 				$("#header-m2 .header-navigation > ul > li > ul").collapse('hide');
-				$('body').removeClass('is-navigation');
+				$('body').removeClass('is-navigation is-users');
+			});
+
+			$('#call-users_mobile').click(function () {
+				$('body').addClass('is-users');
 			});
 		}
 		$(function () {
