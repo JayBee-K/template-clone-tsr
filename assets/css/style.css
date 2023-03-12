@@ -4442,7 +4442,8 @@ CSS Nick
 	padding-bottom: 5px;
 }
 
-.header-m2 .header-hamburger {
+.header-m2 .header-hamburger,
+.header-m2 .header-bottom .header-users_mobile{
 	display: none;
 }
 
@@ -4604,6 +4605,7 @@ CSS Nick
 		margin-left: auto;
 		z-index: 22;
 		margin-right: 35px;
+		display: block;
 	}
 
 	.header-m2 .header-bottom .header-users_mobile .header-users_btn {
@@ -4679,6 +4681,17 @@ CSS Nick
 		transition: var(--transition-default);
 		justify-content: flex-start;
 		border-radius: 0;
+	}
+
+	.header-m2.is-sticky .header-bottom .header-users_mobile .header-users_btn{
+		background-color: var(--primary-color);
+		color: var(--white);
+	}
+
+	.header-m2.is-sticky .header-bottom .header-hamburger:before,
+	.header-m2.is-sticky .header-bottom .header-hamburger:after,
+	.header-m2.is-sticky .header-bottom .header-hamburger > span {
+		background-color: var(--primary-color);
 	}
 
 }
