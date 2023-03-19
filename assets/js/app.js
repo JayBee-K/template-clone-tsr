@@ -322,6 +322,62 @@
 				$('body').addClass('is-users');
 			});
 		}
+
+		let [avatarThumb, avatarPhoto] = [];
+		let handleSlideNickImage = function () {
+			if ($('#detail-avatar_thumb').length > 0) {
+				avatarThumb = new Swiper('#detail-avatar_thumb .swiper', {
+					loopAdditionalSlides: 0,
+					spaceBetween: 15,
+					slidesPerView: 4,
+					breakpoints: {
+						320: {
+							slidesPerView: 3.5,
+						},
+						768: {
+							slidesPerView: 4.5,
+						},
+						1199: {
+							slidesPerView: 5.5,
+						},
+					},
+				});
+
+				avatarPhoto = new Swiper('#detail-avatar_photo .swiper', {
+					thumbs: {
+						swiper: avatarThumb,
+					},
+					slidesPerView: 1,
+				});
+
+				avatarPhoto.on('slideChangeTransitionStart', function () {
+					avatarThumb.slideTo(avatarPhoto.activeIndex);
+				});
+			} else {
+				avatarPhoto = new Swiper('#detail-avatar_photo .swiper', {
+					slidesPerView: 1,
+				});
+			}
+			handleZoomImageNick($('#detail-avatar_photo [data-fancybox=game-images]'), avatarPhoto, avatarThumb);
+		}
+		const handleZoomImageNick = function (elm, avatarPhoto, avatarThumb) {
+			let i = 0;
+			elm.click(function () {
+				i = 0;
+			});
+
+			elm.fancybox({
+				touch: true,
+				beforeShow: function (instance, current) {
+					let index = $(`[data-fancybox='game-images'][href='${current.src}']`).attr('data-index');
+					avatarPhoto.slideTo(index - 1);
+					if ($('#detail-thumb_photo').length > 0) {
+						avatarThumb.slideTo(index - 1);
+					}
+				},
+			});
+		}
+		
 		$(function () {
 			initFromModule1();
 			initFormFloating();
@@ -352,6 +408,7 @@
 			handleHeightImageBannerNick();
 			initReOrderHeader2();
 			initHeaderMobile2();
+			handleSlideNickImage();
 
 			/****
 			 * Scripts Vé
