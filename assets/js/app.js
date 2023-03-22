@@ -377,7 +377,21 @@
 				},
 			});
 		}
-		
+		const handleInitFancyBoxDescriptionGame = () => {
+			const imgList = $('#game-description img');
+			if (imgList.length > 0) {
+				imgList.each((index, elm) => {
+					$(elm).wrap(`<a style="cursor: zoom-in" href="${$(elm).attr('src')}" data-caption="${$(elm).attr('alt')}" data-fancybox="game-description_image"></a>`);
+				});
+
+				$('[data-fancybox="game-description_image"]').fancybox({
+					thumbs: {
+						autoStart: true,
+					},
+				});
+			}
+		}
+
 		$(function () {
 			initFromModule1();
 			initFormFloating();
@@ -409,6 +423,7 @@
 			initReOrderHeader2();
 			initHeaderMobile2();
 			handleSlideNickImage();
+			handleInitFancyBoxDescriptionGame();
 
 			/****
 			 * Scripts Vé
