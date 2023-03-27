@@ -293,34 +293,36 @@
 			}
 		}
 		let initHeaderMobile2 = function () {
-			if ($("#header-m2 .header-navigation > ul > li > ul").length) {
-				$("#header-m2 .header-navigation").attr('id', 'hasMenu');
-				$("#header-m2 .header-navigation > ul > li > ul").each(function (index) {
-					$(this).prev().attr({
-						"href": "#subMenu_" + index,
-						"data-toggle": "collapse"
-					});
+			if (windowWidth < 1200) {
+				if ($("#header-m2 .header-navigation > ul > li > ul").length) {
+					$("#header-m2 .header-navigation").attr('id', 'hasMenu');
+					$("#header-m2 .header-navigation > ul > li > ul").each(function (index) {
+						$(this).prev().attr({
+							"href": "#subMenu_" + index,
+							"data-toggle": "collapse"
+						});
 
-					$(this).attr({
-						"id": "subMenu_" + index,
-						"class": "collapse list-unstyled mb-0 ",
-						"data-parent": "#hasMenu"
+						$(this).attr({
+							"id": "subMenu_" + index,
+							"class": "collapse list-unstyled mb-0 ",
+							"data-parent": "#hasMenu"
+						});
 					});
+				}
+
+				$('#call-navigation_m2').click(function () {
+					$('body').addClass('is-navigation');
+				})
+
+				$('#header-overlay_m2').click(function () {
+					$("#header-m2 .header-navigation > ul > li > ul").collapse('hide');
+					$('body').removeClass('is-navigation is-users');
+				});
+
+				$('#call-users_mobile').click(function () {
+					$('body').addClass('is-users');
 				});
 			}
-
-			$('#call-navigation_m2').click(function () {
-				$('body').addClass('is-navigation');
-			})
-
-			$('#header-overlay_m2').click(function () {
-				$("#header-m2 .header-navigation > ul > li > ul").collapse('hide');
-				$('body').removeClass('is-navigation is-users');
-			});
-
-			$('#call-users_mobile').click(function () {
-				$('body').addClass('is-users');
-			});
 		}
 
 		let [avatarThumb, avatarPhoto] = [];
@@ -358,7 +360,10 @@
 					slidesPerView: 1,
 				});
 			}
-			handleZoomImageNick($('#detail-avatar_photo [data-fancybox=game-images]'), avatarPhoto, avatarThumb);
+
+			if ($('#detail-avatar_thumb').length > 0 || $('#detail-avatar_photo').length > 0) {
+				handleZoomImageNick($('#detail-avatar_photo [data-fancybox=game-images]'), avatarPhoto, avatarThumb);
+			}
 		}
 		const handleZoomImageNick = function (elm, avatarPhoto, avatarThumb) {
 			let i = 0;
