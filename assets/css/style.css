@@ -1566,16 +1566,49 @@ h6, .h6 {
 	display: none;
 }
 
-.header-m1.header-sort .header-logo {
-	order: 1;
-}
+@media screen and (min-width: 1025px) {
+	.header-m1.header-sort {
+		overflow: hidden;
+	}
+	.header-m1.header-sort .header-logo {
+		order: 1;
+	}
 
-.header-m1.header-sort .header-navigation {
-	order: 3;
-}
+	.header-m1.header-sort .header-navigation {
+		order: 3;
+		width: 100%;
+		position: relative;
+		background-color: var(--gray-100);
+		margin-top: 10px;
+	}
 
-.header-m1.header-sort .header-user {
-	order: 2;
+	.header-m1.header-sort .header-navigation:before,
+	.header-m1.header-sort .header-navigation:after {
+		display: block;
+		position: absolute;
+		content: "";
+		height: 100%;
+		top: 0;
+		bottom: 0;
+		background-color: var(--gray-100);
+		/*width: calc((100% - (100% - 1140px)) / 3 + 16px);*/
+		width: 100%;
+		z-index: -1;
+	}
+
+	.header-m1.header-sort .header-navigation:before {
+		/*left: calc(((100% - (100% - 1140px)) / 3 + 16px) * -1);*/
+		left: -100%;
+	}
+
+	.header-m1.header-sort .header-navigation:after {
+		right: -100%;
+		/*right: calc(((100% - (100% - 1140px)) / 3 + 16px) * -1);*/
+	}
+
+	.header-m1.header-sort .header-user {
+		order: 2;
+	}
 }
 
 @media screen and (max-width: 1024px) {
@@ -5067,6 +5100,25 @@ CSS Nick
 	text-align: center;
 	color: #dc3545;
 	font-weight: 500;
+}
+
+.nick-card .card-body .card-button .button-nick {
+	background-color: var(--primary-color);
+	color: var(--white);
+	border-radius: 4px;
+	padding: 6px 15px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	font-weight: 700;
+	font-size: .95em;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+}
+
+.nick-card .card-body .card-button .button-nick:hover {
+	background-color: var(--primary-hover);
 }
 
 .nick-game img {
