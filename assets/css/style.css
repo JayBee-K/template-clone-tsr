@@ -28,6 +28,7 @@ body {
 	font-size: 14px;
 	font-weight: 400;
 	font-style: normal;
+	overflow-x: hidden;
 }
 
 a {
@@ -1567,9 +1568,6 @@ h6, .h6 {
 }
 
 @media screen and (min-width: 1025px) {
-	.header-m1.header-sort {
-		overflow: hidden;
-	}
 	.header-m1.header-sort .header-logo {
 		order: 1;
 	}
@@ -1580,6 +1578,11 @@ h6, .h6 {
 		position: relative;
 		background-color: var(--gray-100);
 		margin-top: 10px;
+	}
+
+	.header-m1.header-sort .header-navigation > ul > li > a{
+		padding-top: 18px;
+		padding-bottom: 18px;
 	}
 
 	.header-m1.header-sort .header-navigation:before,
