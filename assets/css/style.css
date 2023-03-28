@@ -1568,6 +1568,9 @@ h6, .h6 {
 }
 
 @media screen and (min-width: 1025px) {
+	.header-m1.header-sort {
+		padding-top: 10px;
+	}
 	.header-m1.header-sort .header-logo {
 		order: 1;
 	}
