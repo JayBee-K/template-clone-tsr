@@ -5883,6 +5883,11 @@ CSS Nick
         -ms-transform: rotate(180deg);
         transform: rotate(180deg);
     }
+
+    .header-v2.is-sticky .header-navigation .header-navigation_list .header-navigation_item:hover .header-navigation_item--link,
+    .header-v2.is-page .header-navigation .header-navigation_list .header-navigation_item:hover .header-navigation_item--link {
+        border-bottom-color: var(--primary-color);
+    }
 }
 
 .header-v2 .header-navigation .header-navigation_list .header-navigation_item:hover .header-navigation_sub--list {
@@ -6072,6 +6077,17 @@ CSS Nick
 .header-v2 .header-account .header-account_button .button-theme:hover,
 .header-v2 .header-account .header-account_list .button-theme:hover {
     background: #e9e9e9;
+}
+
+.header-v2.is-sticky .header-account .header-account_button .button-theme,
+.header-v2.is-page .header-account .header-account_list .button-theme {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.header-v2.is-sticky .header-account .header-account_button .button-theme:hover,
+.header-v2.is-page .header-account .header-account_list .button-theme:hover {
+    background: var(--primary-hover);
 }
 
 .header-v2 .header-account .header-account_list:hover ul {

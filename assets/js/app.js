@@ -398,7 +398,18 @@
 				});
 			}
 		}
-
+		const handleStickyHeaderV2 = () => {
+			const header = $('#header-v2');
+			const headerPosition = header.offset().top;
+			$(window).scroll(function () {
+				const scrollValue = $(window).scrollTop();
+				if (scrollValue > headerPosition) {
+					header.addClass('is-sticky');
+				} else {
+					header.removeClass('is-sticky');
+				}
+			});
+		}
 		const handleSliderHero = function () {
 			if ($('#slider-hero').length) {
 				new Swiper('#slider-hero .swiper', {
@@ -463,6 +474,7 @@
 			 * Scripts NetPay
 			 */
 			handleSliderHero();
+			handleStickyHeaderV2();
 
 			/****
 			 * Scripts Vé
