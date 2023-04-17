@@ -2513,7 +2513,7 @@ h6, .h6 {
 
 .partner-wrapper .partner-item {
 	padding: 4px;
-	width: calc(100% / 7);
+	width: calc(100% / 6);
 }
 
 .partner-wrapper .partner-item img {
