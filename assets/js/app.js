@@ -426,14 +426,60 @@
 						nextEl: "#slider-hero .slider-button_next",
 						prevEl: "#slider-hero .slider-button_prev",
 					},
-					pagination: {
-						el: "#slider-hero .slider-pagination",
-						clickable: true,
-						renderBullet: function (index, className) {
-							return `<span class="${className}">0${index + 1}</span>`;
-						},
+				});
+			}
+		}
+		let initReOrderHeaderV2 = function () {
+			const elmHeader = $('#header-v2')
+			if (windowWidth > 1024 && windowWidth < 1399) {
+				let widthContainer = parseInt(elmHeader.find('.container-fluid').children('.header-grid').width()),
+					widthNavigation = parseInt(elmHeader.find('.container-fluid').children('.header-grid').children('.header-navigation').width()),
+					widthRatio = (widthNavigation) / widthContainer;
+				if (widthRatio > 0.35) {
+					elmHeader.addClass('header-sort');
+				} else {
+					elmHeader.removeClass('header-sort');
+				}
+			} else {
+				elmHeader.removeClass('header-sort');
+			}
+		}
+
+		const handleNavigationMobileV2 = () => {
+			if (windowWidth < 1024) {
+				if ($("#header-v2 .header-navigation > ul > li > ul").length) {
+					$("#header-v2 .header-navigation").attr('id', 'hasMenu');
+					$("#header-v2 .header-navigation > ul > li > ul").each(function (index) {
+						$(this).prev().attr({
+							"href": "#subMenu_" + index, "data-toggle": "collapse"
+						});
+						$(this).attr({
+							"id": "subMenu_" + index, "data-parent": "#hasMenu"
+						}).addClass('collapse list-unstyled mb-0');
+					});
+				}
+
+				$('#call-navigation').click(function () {
+					if (!$('body').hasClass('is-navigation')) {
+						$('body').addClass('is-navigation');
+					} else {
+						$("#header .header-navigation > ul > li > .navigation-sub").collapse('hide');
+						$('body').removeClass('is-navigation');
 					}
 				});
+
+				$('#close-navigation, #header-overlay').click(function () {
+					$('body').removeClass('is-navigation');
+				});
+			} else {
+				if ($("#header-v2 .header-navigation > ul > li > ul").length) {
+					$("#header-v2 .header-navigation > ul > li > ul").each(function () {
+						$(this).prev().attr({
+							"href": "javascript:void(0);"
+						}).removeAttr('data-toggle');
+						$(this).removeClass('collapse').removeAttr('data-parent id')
+					});
+				}
 			}
 		}
 
@@ -475,7 +521,13 @@
 			 */
 			handleSliderHero();
 			handleStickyHeaderV2();
-
+			initReOrderHeaderV2();
+			handleNavigationMobileV2();
+			$(window).resize(function () {
+				windowWidth = $(window).width();
+				initReOrderHeaderV2();
+				handleNavigationMobileV2();
+			});
 			/****
 			 * Scripts Vé
 			 */
