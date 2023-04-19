@@ -6256,6 +6256,19 @@ CSS Nick
 	border-color: var(--primary-color);
 }
 
+.header-v2.is-sticky .header-account  .button-theme_outline,
+.header-v2.is-page .header-account  .button-theme_outline {
+	color: var(--primary-color) !important;
+	border-color: var(--primary-color) !important;
+}
+
+.header-v2.is-sticky .header-account .button-theme_outline:hover,
+.header-v2.is-page .header-account .button-theme_outline:hover {
+	background-color: var(--primary-hover) !important;
+	border-color: var(--primary-hover) !important;
+	color: var(--white) !important;
+}
+
 .header-v2.header-sort .header-grid .header-navigation {
 	margin: 0 auto;
 	width: 100%;
