@@ -6212,15 +6212,16 @@ CSS Nick
 	color: var(--primary-color);
 }
 
+.header-v2.is-page {
+	background-color: var(--white);
+	-webkit-box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
+	box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
+	position: relative;
+}
+
 .header-v2.is-sticky {
 	background-color: var(--white);
 	position: fixed;
-	-webkit-box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
-	box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
-}
-
-.header-v2.is-page {
-	background-color: var(--white);
 	-webkit-box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
 	box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
 }
@@ -6256,8 +6257,8 @@ CSS Nick
 	border-color: var(--primary-color);
 }
 
-.header-v2.is-sticky .header-account  .button-theme_outline,
-.header-v2.is-page .header-account  .button-theme_outline {
+.header-v2.is-sticky .header-account .button-theme_outline,
+.header-v2.is-page .header-account .button-theme_outline {
 	color: var(--primary-color) !important;
 	border-color: var(--primary-color) !important;
 }
