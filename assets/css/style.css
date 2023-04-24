@@ -7042,7 +7042,6 @@ CSS Nick
     color: var(--white);
     background-color: var(--primary-color);
     padding: 8px 15px;
-    text-align: center;
     font-weight: 700;
     font-size: 1.15em;
 }
@@ -7064,27 +7063,33 @@ CSS Nick
     flex-direction: column;
 }
 
-.document-sidebar .sidebar-item .sidebar-list ul li + li,
-.document-sidebar .sidebar-item .sidebar-list ul li > ul {
+.document-sidebar .sidebar-item .sidebar-list ul li + li {
     border-top: 1px solid var(--gray-100);
 }
 
-.document-sidebar .sidebar-item .sidebar-list ul li > a {
-    padding: 8px 15px;
+.document-sidebar .sidebar-item .sidebar-list ul li > .list-item {
+    padding: 12px 15px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 5px;
+    gap: 7px;
     transition: var(--transition-default);
     color: #222;
-}
-
-.document-sidebar .sidebar-item .sidebar-list > ul > li > a {
     font-weight: 500;
 }
 
-.document-sidebar .sidebar-item .sidebar-list ul li > a:hover,
-.document-sidebar .sidebar-item .sidebar-list ul li > a[aria-expanded=true] {
+.document-sidebar .sidebar-item .sidebar-list ul li > .list-item.list-item_excel > i {
+    color: #016E38;
+}
+
+.document-sidebar .sidebar-item .sidebar-list ul li > .list-item.list-item_pdf > i {
+    color: #C1401E;
+}
+
+.document-sidebar .sidebar-item .sidebar-list ul li > .list-item.list-item_word > i {
+    color: #0C67C2;
+}
+
+.document-sidebar .sidebar-item .sidebar-list ul li > .list-item:hover {
     color: var(--primary-color);
     background-color: #efefef;
 }
@@ -7093,7 +7098,14 @@ CSS Nick
     font-size: 1.2em;
 }
 
-.document-sidebar .sidebar-item .sidebar-list ul ul li > a {
-    font-size: .95em;
-    color: #454545;
+@media screen and (min-width: 992px) {
+    .col-lg-20 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+    .col-lg-80 {
+        flex: 0 0 80%;
+        max-width: 80%;
+    }
 }
