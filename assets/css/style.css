@@ -7075,6 +7075,7 @@ CSS Nick
     transition: var(--transition-default);
     color: #222;
     font-weight: 500;
+    line-height: 1.3;
 }
 
 .document-sidebar .sidebar-item .sidebar-list ul li > .list-item.list-item_excel > i {
@@ -7096,6 +7097,7 @@ CSS Nick
 
 .document-sidebar .sidebar-item .sidebar-list ul li > a > i {
     font-size: 1.2em;
+    align-self: flex-start;
 }
 
 @media screen and (min-width: 992px) {
