@@ -7141,6 +7141,7 @@ CSS Nick
 .document-sidebar .sidebar-item .sidebar-bg .sidebar-list ul li > ul > li > a {
     background-color: var(--white);
     color: var(--gray-900);
+    justify-content: flex-start;
 }
 
 .document-sidebar .sidebar-item .sidebar-bg .sidebar-list ul ul li:hover > a {
