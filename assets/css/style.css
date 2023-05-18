@@ -5774,6 +5774,15 @@ CSS Nick
 	background-color: rgba(255, 255, 255, .1) !important;
 }
 
+.button-theme.button-theme_secondary {
+	background-color: #f0ad4e;
+}
+
+.button-theme.button-theme_secondary:hover {
+	background-color: #ec971f;
+	color: var(--white);
+}
+
 .button-theme > span {
 	font-size: .8em;
 	font-weight: 400;
