@@ -400,15 +400,17 @@
 		}
 		const handleStickyHeaderV2 = () => {
 			const header = $('#header-v2');
-			const headerPosition = header.offset().top;
-			$(window).scroll(function () {
-				const scrollValue = $(window).scrollTop();
-				if (scrollValue > headerPosition) {
-					header.addClass('is-sticky');
-				} else {
-					header.removeClass('is-sticky');
-				}
-			});
+			if (header.length) {
+				const headerPosition = header.offset().top;
+				$(window).scroll(function () {
+					const scrollValue = $(window).scrollTop();
+					if (scrollValue > headerPosition) {
+						header.addClass('is-sticky');
+					} else {
+						header.removeClass('is-sticky');
+					}
+				});
+			}
 		}
 		const handleSliderHero = function () {
 			if ($('#slider-hero').length) {
