@@ -7578,3 +7578,7 @@ CSS Nick
 		width: 100%;
 	}
 }
+
+.card-info .card-header {
+	padding: 7px 10px;
+}
