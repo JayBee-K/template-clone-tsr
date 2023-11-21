@@ -485,6 +485,28 @@
 			}
 		}
 
+		const handleSlideBig = function () {
+			if ($('#slider-big').length > 0) {
+				new Swiper('#slider-big .swiper', {
+					slidesPerView: 1,
+					navigation: {
+						nextEl: "#slider-big .slider-button_next",
+						prevEl: "#slider-big .slider-button_prev",
+					},
+					autoplay: {
+						delay: 4000,
+						disableOnInteraction: true,
+					},
+					speed: 800,
+					loop: true,
+					pagination: {
+						el: "#slider-big .slider-pagination",
+						clickable: true
+					}
+				});
+			}
+		}
+
 		$(function () {
 			initFromModule1();
 			initFormFloating();
@@ -886,6 +908,8 @@
 					},
 				});
 			}
+
+			handleSlideBig();
 		});
 	}
 )
