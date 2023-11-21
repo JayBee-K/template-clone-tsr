@@ -86,7 +86,6 @@
 					widthLogo = parseInt(elmHeader.children('.container').children('.header-logo').width()),
 					widthUser = parseInt(elmHeader.children('.container').children('.header-user').width()),
 					widthRatio = (widthNavigation - widthLogo - widthUser) / widthContainer;
-				console.log(widthRatio);
 				if (widthRatio > 0.3) {
 					elmHeader.addClass('header-sort');
 				}

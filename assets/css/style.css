@@ -7594,3 +7594,12 @@ CSS Nick
 .p10 {
 	padding: 10px;
 }
+
+.section-gap {
+	margin: 0;
+	padding: 20px 0;
+}
+
+.section-light {
+	background-color: #f4f4f4;
+}
